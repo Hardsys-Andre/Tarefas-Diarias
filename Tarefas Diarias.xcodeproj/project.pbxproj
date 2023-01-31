@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D0E9097890E9AA826693097 /* Pods_Tarefas_Diarias.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F69ED512E215A8A22C277A0 /* Pods_Tarefas_Diarias.framework */; };
+		AC8C7C982989CBBE00785C09 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8C7C962989CBBE00785C09 /* LoginViewController.swift */; };
+		AC8C7C992989CBBE00785C09 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC8C7C972989CBBE00785C09 /* LoginViewController.xib */; };
 		ACAC26732989658F009DB8A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC26722989658F009DB8A8 /* AppDelegate.swift */; };
 		ACAC26752989658F009DB8A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC26742989658F009DB8A8 /* SceneDelegate.swift */; };
-		ACAC26772989658F009DB8A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC26762989658F009DB8A8 /* ViewController.swift */; };
-		ACAC267A2989658F009DB8A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACAC26782989658F009DB8A8 /* Main.storyboard */; };
 		ACAC267C2989658F009DB8A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACAC267B2989658F009DB8A8 /* Assets.xcassets */; };
 		ACAC267F2989658F009DB8A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACAC267D2989658F009DB8A8 /* LaunchScreen.storyboard */; };
 		ACAC268C2989A2B8009DB8A8 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC268A2989A2B8009DB8A8 /* CadastroViewController.swift */; };
@@ -18,16 +19,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F69ED512E215A8A22C277A0 /* Pods_Tarefas_Diarias.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tarefas_Diarias.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC8C7C962989CBBE00785C09 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AC8C7C972989CBBE00785C09 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		ACAC266F2989658F009DB8A8 /* Tarefas Diarias.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tarefas Diarias.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACAC26722989658F009DB8A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACAC26742989658F009DB8A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ACAC26762989658F009DB8A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ACAC26792989658F009DB8A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACAC267B2989658F009DB8A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACAC267E2989658F009DB8A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACAC26802989658F009DB8A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACAC268A2989A2B8009DB8A8 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		ACAC268B2989A2B8009DB8A8 /* CadastroViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CadastroViewController.xib; sourceTree = "<group>"; };
+		BD4DFCE4B631CDB01E868F94 /* Pods-Tarefas Diarias.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tarefas Diarias.debug.xcconfig"; path = "Target Support Files/Pods-Tarefas Diarias/Pods-Tarefas Diarias.debug.xcconfig"; sourceTree = "<group>"; };
+		E8BBFD0068745FB481FF6F04 /* Pods-Tarefas Diarias.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tarefas Diarias.release.xcconfig"; path = "Target Support Files/Pods-Tarefas Diarias/Pods-Tarefas Diarias.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D0E9097890E9AA826693097 /* Pods_Tarefas_Diarias.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FD2BCAB53023BDD5B7EC7C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD4DFCE4B631CDB01E868F94 /* Pods-Tarefas Diarias.debug.xcconfig */,
+				E8BBFD0068745FB481FF6F04 /* Pods-Tarefas Diarias.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AC8C7C952989CB8100785C09 /* LoginInicioViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AC8C7C962989CBBE00785C09 /* LoginViewController.swift */,
+				AC8C7C972989CBBE00785C09 /* LoginViewController.xib */,
+			);
+			path = LoginInicioViewController;
+			sourceTree = "<group>";
+		};
 		ACAC26662989658F009DB8A8 = {
 			isa = PBXGroup;
 			children = (
 				ACAC26712989658F009DB8A8 /* Tarefas Diarias */,
 				ACAC26702989658F009DB8A8 /* Products */,
+				1FD2BCAB53023BDD5B7EC7C9 /* Pods */,
+				D6414EBC9288448E9D46FBB4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +85,8 @@
 		ACAC26712989658F009DB8A8 /* Tarefas Diarias */ = {
 			isa = PBXGroup;
 			children = (
+				AC8C7C952989CB8100785C09 /* LoginInicioViewController */,
 				ACAC26872989A242009DB8A8 /* CadastroViewController */,
-				ACAC26862989A212009DB8A8 /* LoginViewController */,
 				ACAC26722989658F009DB8A8 /* AppDelegate.swift */,
 				ACAC26742989658F009DB8A8 /* SceneDelegate.swift */,
 				ACAC267B2989658F009DB8A8 /* Assets.xcassets */,
@@ -69,15 +94,6 @@
 				ACAC26802989658F009DB8A8 /* Info.plist */,
 			);
 			path = "Tarefas Diarias";
-			sourceTree = "<group>";
-		};
-		ACAC26862989A212009DB8A8 /* LoginViewController */ = {
-			isa = PBXGroup;
-			children = (
-				ACAC26782989658F009DB8A8 /* Main.storyboard */,
-				ACAC26762989658F009DB8A8 /* ViewController.swift */,
-			);
-			path = LoginViewController;
 			sourceTree = "<group>";
 		};
 		ACAC26872989A242009DB8A8 /* CadastroViewController */ = {
@@ -89,6 +105,14 @@
 			path = CadastroViewController;
 			sourceTree = "<group>";
 		};
+		D6414EBC9288448E9D46FBB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F69ED512E215A8A22C277A0 /* Pods_Tarefas_Diarias.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -96,9 +120,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACAC26832989658F009DB8A8 /* Build configuration list for PBXNativeTarget "Tarefas Diarias" */;
 			buildPhases = (
+				161F734ABCF5668ED9227A5B /* [CP] Check Pods Manifest.lock */,
 				ACAC266B2989658F009DB8A8 /* Sources */,
 				ACAC266C2989658F009DB8A8 /* Frameworks */,
 				ACAC266D2989658F009DB8A8 /* Resources */,
+				76CF95EABFD0C0E3E9945FB0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -147,23 +173,65 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC8C7C992989CBBE00785C09 /* LoginViewController.xib in Resources */,
 				ACAC267F2989658F009DB8A8 /* LaunchScreen.storyboard in Resources */,
 				ACAC267C2989658F009DB8A8 /* Assets.xcassets in Resources */,
-				ACAC267A2989658F009DB8A8 /* Main.storyboard in Resources */,
 				ACAC268D2989A2B8009DB8A8 /* CadastroViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		161F734ABCF5668ED9227A5B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tarefas Diarias-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76CF95EABFD0C0E3E9945FB0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tarefas Diarias/Pods-Tarefas Diarias-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tarefas Diarias/Pods-Tarefas Diarias-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tarefas Diarias/Pods-Tarefas Diarias-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ACAC266B2989658F009DB8A8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACAC26772989658F009DB8A8 /* ViewController.swift in Sources */,
 				ACAC26732989658F009DB8A8 /* AppDelegate.swift in Sources */,
 				ACAC26752989658F009DB8A8 /* SceneDelegate.swift in Sources */,
+				AC8C7C982989CBBE00785C09 /* LoginViewController.swift in Sources */,
 				ACAC268C2989A2B8009DB8A8 /* CadastroViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,14 +239,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		ACAC26782989658F009DB8A8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ACAC26792989658F009DB8A8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ACAC267D2989658F009DB8A8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -306,6 +366,7 @@
 		};
 		ACAC26842989658F009DB8A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD4DFCE4B631CDB01E868F94 /* Pods-Tarefas Diarias.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -315,7 +376,7 @@
 				INFOPLIST_FILE = "Tarefas Diarias/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -333,6 +394,7 @@
 		};
 		ACAC26852989658F009DB8A8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8BBFD0068745FB481FF6F04 /* Pods-Tarefas Diarias.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -342,7 +404,7 @@
 				INFOPLIST_FILE = "Tarefas Diarias/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
