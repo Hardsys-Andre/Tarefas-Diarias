@@ -9,4 +9,6 @@ target 'Tarefas Diarias' do
 
 pod 'Alamofire', '~> 5.6'
 
+pod 'FirebaseAuth'
+
 end
