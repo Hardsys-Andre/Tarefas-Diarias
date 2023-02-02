@@ -11,4 +11,7 @@ pod 'Alamofire', '~> 5.6'
 
 pod 'FirebaseAuth'
 
+pod 'Firebase/Firestore'
+pod 'IQKeyboardManagerSwift'
+
 end
