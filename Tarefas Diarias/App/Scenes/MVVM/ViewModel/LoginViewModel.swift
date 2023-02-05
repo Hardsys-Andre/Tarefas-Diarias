@@ -17,16 +17,19 @@ protocol LoginViewModelDelegate{
 class LoginViewModel{
     
     var auth:Auth?
+    //var alert: Alert?
     
     var delegate: LoginViewModelDelegate
     
     init(delegate: LoginViewModelDelegate){
         self.delegate = delegate
+        //alert = Alert(controller: self)
     }
 
     func signIn(email: String, password: String){
 
         self.auth = Auth.auth()
+        
 
         self.auth?.signIn(withEmail: email, password: password, completion: { usuario, error in
             if error != nil{
@@ -39,9 +42,24 @@ class LoginViewModel{
                     
                 }else{
                     print("Login feito com sucesso")
-                    self.delegate.goToTasks()
+                    self.getDados()
+                    
                 }
             }
         })
+    }
+    
+    func getDados(){
+        
+        let db = Firestore.firestore()
+        
+        db.collection("users").whereField("email", isEqualTo: "andre@gmail.com").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                print(querySnapshot?.documents.first?.data())
+                self.delegate.goToTasks()
+            }
+        }
     }
 }

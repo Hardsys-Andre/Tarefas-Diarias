@@ -6,12 +6,19 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseCore
+import FirebaseFirestore
 
 class TarefasCriadasViewController: UIViewController {
 
     @IBOutlet weak var dataDoDia: UILabel!
     
+    @IBOutlet weak var userImageLogado: UIImageView!
     @IBOutlet weak var tarefasTableView: UITableView!
+    
+    @IBOutlet weak var addTarefas: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +30,20 @@ class TarefasCriadasViewController: UIViewController {
         
         tarefasTableView.delegate = self
         tarefasTableView.dataSource = self
-
-
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(tappedAddTarefas))
+        addTarefas.isUserInteractionEnabled = true
+        addTarefas.addGestureRecognizer(gesture)
+   
   
     }
+    
+    @objc func tappedAddTarefas(){
+        let addTarefas = CadastrarTarefasViewController()
+        navigationController?.pushViewController(addTarefas, animated: true)
+    }
+
+    
 }
 extension TarefasCriadasViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

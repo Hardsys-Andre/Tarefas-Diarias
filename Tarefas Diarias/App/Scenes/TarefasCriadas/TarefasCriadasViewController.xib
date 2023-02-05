@@ -10,8 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TarefasCriadasViewController" customModule="Tarefas_Diarias" customModuleProvider="target">
             <connections>
+                <outlet property="addTarefas" destination="0Fw-FM-idS" id="SjE-Iw-Q0x"/>
                 <outlet property="dataDoDia" destination="BxT-lt-GRq" id="nfq-Vl-ksq"/>
                 <outlet property="tarefasTableView" destination="7zL-iY-P7E" id="6fP-uw-thV"/>
+                <outlet property="userImageLogado" destination="Z28-A9-cCs" id="ArN-yO-me9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -50,8 +52,9 @@
                     <rect key="frame" x="16" y="144" width="361" height="587"/>
                     <color key="backgroundColor" red="0.072233475670000005" green="0.071808718160000007" blue="0.25257731960000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </tableView>
-                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" translatesAutoresizingMaskIntoConstraints="NO" id="oP9-Eu-3KC">
+                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" translatesAutoresizingMaskIntoConstraints="NO" id="oP9-Eu-3KC">
                     <rect key="frame" x="16" y="144" width="361" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oP9-Eu-3KC" id="1vo-Wk-VHI">
                         <rect key="frame" x="0.0" y="0.0" width="361" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -72,17 +75,13 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="7zL-iY-P7E" secondAttribute="bottom" constant="87" id="Kp1-y5-sgU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0Fw-FM-idS" secondAttribute="bottom" id="Nvj-Wp-zBC"/>
                 <constraint firstItem="0Fw-FM-idS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="164" id="TAH-6G-nM2"/>
-                <constraint firstAttribute="trailing" secondItem="oP9-Eu-3KC" secondAttribute="trailing" constant="16" id="TUr-CO-Bdm"/>
                 <constraint firstItem="Z28-A9-cCs" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" constant="-11" id="TsG-9N-tub"/>
                 <constraint firstItem="Z28-A9-cCs" firstAttribute="centerY" secondItem="5Sc-Z3-sTO" secondAttribute="centerY" id="WwH-2G-MBs"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7zL-iY-P7E" secondAttribute="trailing" constant="16" id="X7L-vd-jqF"/>
-                <constraint firstItem="oP9-Eu-3KC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="144" id="YiQ-Um-y5X"/>
                 <constraint firstItem="BxT-lt-GRq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="27" id="Zyc-hR-urW"/>
                 <constraint firstItem="0Fw-FM-idS" firstAttribute="centerX" secondItem="7zL-iY-P7E" secondAttribute="centerX" id="gbq-AP-aZi"/>
                 <constraint firstItem="5Sc-Z3-sTO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-3" id="jTS-b9-VdR"/>
-                <constraint firstItem="Z28-A9-cCs" firstAttribute="top" secondItem="oP9-Eu-3KC" secondAttribute="bottom" constant="-142" id="v0d-JK-tfa"/>
                 <constraint firstItem="5Sc-Z3-sTO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="34" id="wYT-eJ-YrS"/>
-                <constraint firstItem="oP9-Eu-3KC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="zeN-5k-cuO"/>
             </constraints>
             <point key="canvasLocation" x="136.64122137404578" y="19.718309859154932"/>
         </view>

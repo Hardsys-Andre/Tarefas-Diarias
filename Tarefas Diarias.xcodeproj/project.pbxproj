@@ -23,6 +23,9 @@
 		ACAC267F2989658F009DB8A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACAC267D2989658F009DB8A8 /* LaunchScreen.storyboard */; };
 		ACAC268C2989A2B8009DB8A8 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC268A2989A2B8009DB8A8 /* CadastroViewController.swift */; };
 		ACAC268D2989A2B8009DB8A8 /* CadastroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACAC268B2989A2B8009DB8A8 /* CadastroViewController.xib */; };
+		ACB9F6C229905EEE00843242 /* CadastrarTarefasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB9F6C029905EEE00843242 /* CadastrarTarefasViewController.swift */; };
+		ACB9F6C329905EEE00843242 /* CadastrarTarefasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB9F6C129905EEE00843242 /* CadastrarTarefasViewController.xib */; };
+		ACBDACD4298DAC85000D9925 /* GetDadosUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBDACD3298DAC85000D9925 /* GetDadosUsuario.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		ACAC26802989658F009DB8A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACAC268A2989A2B8009DB8A8 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		ACAC268B2989A2B8009DB8A8 /* CadastroViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CadastroViewController.xib; sourceTree = "<group>"; };
+		ACB9F6C029905EEE00843242 /* CadastrarTarefasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastrarTarefasViewController.swift; sourceTree = "<group>"; };
+		ACB9F6C129905EEE00843242 /* CadastrarTarefasViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CadastrarTarefasViewController.xib; sourceTree = "<group>"; };
+		ACBDACD3298DAC85000D9925 /* GetDadosUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDadosUsuario.swift; sourceTree = "<group>"; };
 		BD4DFCE4B631CDB01E868F94 /* Pods-Tarefas Diarias.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tarefas Diarias.debug.xcconfig"; path = "Target Support Files/Pods-Tarefas Diarias/Pods-Tarefas Diarias.debug.xcconfig"; sourceTree = "<group>"; };
 		E8BBFD0068745FB481FF6F04 /* Pods-Tarefas Diarias.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tarefas Diarias.release.xcconfig"; path = "Target Support Files/Pods-Tarefas Diarias/Pods-Tarefas Diarias.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				AC23FBFE298B6D780048B3D1 /* MVVM */,
+				ACBDACCC298D9BE6000D9925 /* CadastrarTarefas */,
 				AC8C7C9C298A021600785C09 /* TarefasCriadas */,
 				ACAC26872989A242009DB8A8 /* CadastroViewController */,
 				AC8C7C952989CB8100785C09 /* LoginInicioViewController */,
@@ -127,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				AC0DB981298B81A6004F4F4F /* LoginViewModel.swift */,
+				ACBDACD3298DAC85000D9925 /* GetDadosUsuario.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -214,6 +222,15 @@
 			path = CadastroViewController;
 			sourceTree = "<group>";
 		};
+		ACBDACCC298D9BE6000D9925 /* CadastrarTarefas */ = {
+			isa = PBXGroup;
+			children = (
+				ACB9F6C029905EEE00843242 /* CadastrarTarefasViewController.swift */,
+				ACB9F6C129905EEE00843242 /* CadastrarTarefasViewController.xib */,
+			);
+			path = CadastrarTarefas;
+			sourceTree = "<group>";
+		};
 		D6414EBC9288448E9D46FBB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC8C7CA0298A02CD00785C09 /* TarefasCriadasViewController.xib in Resources */,
+				ACB9F6C329905EEE00843242 /* CadastrarTarefasViewController.xib in Resources */,
 				AC8C7C992989CBBE00785C09 /* LoginViewController.xib in Resources */,
 				ACAC267F2989658F009DB8A8 /* LaunchScreen.storyboard in Resources */,
 				AC23FC05298B72C70048B3D1 /* LoginView.xib in Resources */,
@@ -347,6 +365,8 @@
 				ACAC26752989658F009DB8A8 /* SceneDelegate.swift in Sources */,
 				AC0DB982298B81A6004F4F4F /* LoginViewModel.swift in Sources */,
 				AC8C7C982989CBBE00785C09 /* LoginViewController.swift in Sources */,
+				ACBDACD4298DAC85000D9925 /* GetDadosUsuario.swift in Sources */,
+				ACB9F6C229905EEE00843242 /* CadastrarTarefasViewController.swift in Sources */,
 				AC8C7C9F298A02CD00785C09 /* TarefasCriadasViewController.swift in Sources */,
 				ACAC268C2989A2B8009DB8A8 /* CadastroViewController.swift in Sources */,
 			);

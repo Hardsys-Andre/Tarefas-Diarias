@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class LoginViewController: UIViewController {
 
@@ -33,15 +34,6 @@ class LoginViewController: UIViewController {
     
     var viewModel: LoginViewModel?
     var alert: Alert?
-     
-   /* init() {
-        super.init(nibName: <#T##String?#>, bundle: <#T##Bundle?#>)
-        viewModel = LoginViewModel()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,8 +115,10 @@ extension LoginViewController: LoginViewDelegate {
 
 extension LoginViewController: LoginViewModelDelegate{
     func goToTasks() {
+        
         loginView.removeFromSuperview()
         loginView.clearFields()
+
         let tarefasVC = TarefasCriadasViewController()
         navigationController?.pushViewController(tarefasVC, animated: true)
     }
