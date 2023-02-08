@@ -17,4 +17,6 @@ pod 'IQKeyboardManagerSwift'
 
 pod 'FirebaseDatabase'
 
+pod 'FSCalendar'
+
 end
