@@ -12,6 +12,8 @@
 		AC23FBFA298B55080048B3D1 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC23FBF9298B55080048B3D1 /* Alert.swift */; };
 		AC23FC05298B72C70048B3D1 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC23FC04298B72C70048B3D1 /* LoginView.xib */; };
 		AC23FC07298B72D60048B3D1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC23FC06298B72D60048B3D1 /* LoginView.swift */; };
+		AC3ED1BD299686A000F342A4 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3ED1BB299686A000F342A4 /* CustomTableViewCell.swift */; };
+		AC3ED1BE299686A000F342A4 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC3ED1BC299686A000F342A4 /* CustomTableViewCell.xib */; };
 		AC8C7C982989CBBE00785C09 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8C7C962989CBBE00785C09 /* LoginViewController.swift */; };
 		AC8C7C992989CBBE00785C09 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC8C7C972989CBBE00785C09 /* LoginViewController.xib */; };
 		AC8C7C9B2989D7AE00785C09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC8C7C9A2989D7AE00785C09 /* GoogleService-Info.plist */; };
@@ -34,6 +36,8 @@
 		AC23FBF9298B55080048B3D1 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		AC23FC04298B72C70048B3D1 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		AC23FC06298B72D60048B3D1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		AC3ED1BB299686A000F342A4 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		AC3ED1BC299686A000F342A4 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		AC8C7C962989CBBE00785C09 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AC8C7C972989CBBE00785C09 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		AC8C7C9A2989D7AE00785C09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -163,6 +167,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		AC3ED1BA2996858200F342A4 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				AC3ED1BB299686A000F342A4 /* CustomTableViewCell.swift */,
+				AC3ED1BC299686A000F342A4 /* CustomTableViewCell.xib */,
+			);
+			path = CustomCell;
+			sourceTree = "<group>";
+		};
 		AC8C7C952989CB8100785C09 /* LoginInicioViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +188,7 @@
 		AC8C7C9C298A021600785C09 /* TarefasCriadas */ = {
 			isa = PBXGroup;
 			children = (
+				AC3ED1BA2996858200F342A4 /* CustomCell */,
 				AC8C7C9D298A02CD00785C09 /* TarefasCriadasViewController.swift */,
 				AC8C7C9E298A02CD00785C09 /* TarefasCriadasViewController.xib */,
 			);
@@ -304,6 +318,7 @@
 				AC8C7C992989CBBE00785C09 /* LoginViewController.xib in Resources */,
 				ACAC267F2989658F009DB8A8 /* LaunchScreen.storyboard in Resources */,
 				AC23FC05298B72C70048B3D1 /* LoginView.xib in Resources */,
+				AC3ED1BE299686A000F342A4 /* CustomTableViewCell.xib in Resources */,
 				AC8C7C9B2989D7AE00785C09 /* GoogleService-Info.plist in Resources */,
 				ACAC267C2989658F009DB8A8 /* Assets.xcassets in Resources */,
 				ACAC268D2989A2B8009DB8A8 /* CadastroViewController.xib in Resources */,
@@ -361,6 +376,7 @@
 			files = (
 				AC23FBFA298B55080048B3D1 /* Alert.swift in Sources */,
 				AC23FC07298B72D60048B3D1 /* LoginView.swift in Sources */,
+				AC3ED1BD299686A000F342A4 /* CustomTableViewCell.swift in Sources */,
 				ACAC26732989658F009DB8A8 /* AppDelegate.swift in Sources */,
 				ACAC26752989658F009DB8A8 /* SceneDelegate.swift in Sources */,
 				AC0DB982298B81A6004F4F4F /* LoginViewModel.swift in Sources */,

@@ -7,20 +7,16 @@
 
 import UIKit
 
-/*class Task: Encodable, Decodable  {
-    var titulo: String
-    var impor: String
-    var comum: String
-    
-    
-    init(titulo: String, impor: String, comum: String) {
-        self.titulo = titulo
-        self.impor = impor
-        self.comum = comum
-        
-    }
+/*protocol UpdateTableDelegate: AnyObject {
+    func updateTable()
 }*/
-    class CadastrarTarefasViewController: UIViewController {
+
+class CadastrarTarefasViewController: UIViewController {
+    
+        
+        weak var delegate: UpdateTableDelegate?
+        
+
         
         @IBOutlet weak var tituloTarefaTextField: UITextField!
         
@@ -57,8 +53,11 @@ import UIKit
         
         @IBOutlet weak var btnCadastrarTarefa: UIButton!
         
+        var alert: Alert?
+        
         override func viewDidLoad() {
             super.viewDidLoad()
+            alert = Alert(controller: self)
             descricaoTarefasTextField.contentVerticalAlignment = .top
             
             btnImportante.layer.cornerRadius = 8
@@ -109,27 +108,51 @@ import UIKit
             btnOutrasCategorias.addTarget(self, action: #selector(tappedOutrasCategorias), for: .touchUpInside)
             
             btnCadastrarTarefa.layer.cornerRadius = 8
+            
+            //Apagar todos os itens do userDefaults
+            //let defaults = UserDefaults.standard
+            //defaults.removeObject(forKey: "tasks")
         }
         
         var categoria: String = ""
         var prioridade: String = ""
         
+        var atualizar = [String]()
+        func atualizaCadastro(){
+            if let data = UserDefaults.standard.array(forKey: "tasks") as? [String]{
+                atualizar = data
+            }
+        }
+        
         @IBAction func tappedCadatrarTarefa(_ sender: Any) {
             
-            let task = ["titulo": tituloTarefaTextField.text as Any,
-                        "Descricao": descricaoTarefasTextField.text as Any,
-                        "prioridade": prioridade,
-                        "Data": dataSelecionada as Any,
-                        "Horario": horaSelecionada as Any,
-                        "Categoria": categoria
-                        
-                        ] as [String : Any]
-                    UserDefaults.standard.set(task, forKey: "task")
-            
-            let taskp = UserDefaults.standard.dictionary(forKey: "task")
-            print(taskp as Any)
-            
+            if tituloTarefaTextField.text == "" {
+                self.alert?.alert(title: "Atenção", message: "Cadastre um título para sua tarefa")
+            }else if dataSelecionada == nil {
+                self.alert?.alert(title: "Atenção", message: "Escolha uma data para sua tarefa")
+            }else if horaSelecionada == nil {
+                self.alert?.alert(title: "Atenção", message: "Escolha um horário para sua tarefa")
+            }else{
+                
+                let task = ["titulo": tituloTarefaTextField.text as Any,
+                            "descricao": descricaoTarefasTextField.text as Any,
+                            "prioridade": prioridade,
+                            "data": dataSelecionada as Any,
+                            "horario": horaSelecionada as Any,
+                            "categoria": categoria
+                ] as [String : Any]
+                
+                var tasks = UserDefaults.standard.array(forKey: "tasks") as? [[String : Any]] ?? []
+                tasks.append(task)
+                UserDefaults.standard.set(tasks, forKey: "tasks")
+                UserDefaults.standard.synchronize()
+                
+               atualizaCadastro()
+                delegate?.updateTable()
+                self.navigationController?.popViewController(animated: true)
+            }
         }
+       
         
         @objc func tappedBtnImportante(){
             prioridade = "Importante"

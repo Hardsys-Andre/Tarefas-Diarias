@@ -10,7 +10,20 @@ import FirebaseDatabase
 import FirebaseCore
 import FirebaseFirestore
 
+protocol UpdateTableDelegate: AnyObject {
+    func updateTable()
+}
+
 class TarefasCriadasViewController: UIViewController {
+    
+    var delegate: UpdateTableDelegate?
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: (Any)?){
+        if segue.identifier == "segueCadastro" {
+            let cadastroVC = segue.destination as? TarefasCriadasViewController
+            cadastroVC?.delegate = self
+        }
+    }
 
     @IBOutlet weak var dataDoDia: UILabel!
     
@@ -19,9 +32,20 @@ class TarefasCriadasViewController: UIViewController {
     
     @IBOutlet weak var addTarefas: UIImageView!
     
+    var tasks = [[String: Any]]()
+    
+    
+    var items = [String]()
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        delegate = self
+        items = defaults.array(forKey: "tasks") as? [String] ?? [String]()
+        
+        tasks = UserDefaults.standard.array(forKey: "tasks") as? [[String: Any]] ?? []
+
+        
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE - dd/MMM - yyyy"
@@ -30,30 +54,57 @@ class TarefasCriadasViewController: UIViewController {
         
         tarefasTableView.delegate = self
         tarefasTableView.dataSource = self
+        tarefasTableView.register(CustomTableViewCell.nib(), forCellReuseIdentifier: CustomTableViewCell.identifier)
+        self.tarefasTableView.reloadData()
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(tappedAddTarefas))
         addTarefas.isUserInteractionEnabled = true
         addTarefas.addGestureRecognizer(gesture)
-   
-  
     }
     
     @objc func tappedAddTarefas(){
         let addTarefas = CadastrarTarefasViewController()
         navigationController?.pushViewController(addTarefas, animated: true)
     }
-
-    
 }
+
 extension TarefasCriadasViewController: UITableViewDelegate, UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.backgroundColor = .systemCyan
-        return cell
+      
+        let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell
+        let task = tasks[indexPath.row]
+        
+        let taskTitle = task["titulo"] as? String
+        let taskDate = task["data"] as? String
+        let taskTitleAndDate = taskTitle! + " - " + taskDate!
+        cell?.tituloTarefaLabel.text = taskTitleAndDate
+        
+        return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            tasks.remove(at: indexPath.row)
+            defaults.set(tasks, forKey: "tasks")
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+}
+
+extension TarefasCriadasViewController: UpdateTableDelegate{
+    func updateTable() {
+        print("quero muito")
+        
+        tarefasTableView.reloadData()
+    
     }
     
     

@@ -46,19 +46,11 @@ class LoginViewController: UIViewController {
         btnGoogle.layer.cornerRadius = 8
         btnGoogle.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         
-       // loginEmailView.isHidden = true
-
         btnEmail.layer.cornerRadius = 8
         btnEmail.titleLabel?.font = UIFont.systemFont(ofSize: 20)
 
         btnCadastro.layer.cornerRadius = 8
         btnCadastro.titleLabel?.font = UIFont.systemFont(ofSize: 20)
-        
-       // btnEmailEntrar.layer.cornerRadius = 8
-       // btnEmailCancelar.layer.cornerRadius = 8
-        
-        
-       
     }
 
     @IBAction func tappedCadastro(_ sender: UIButton) {
@@ -67,10 +59,6 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func tappedLoginEmail(_ sender: UIButton) {
-        //btnEmail.isHidden = true
-        //logoEmail.isHidden = true
-        //loginEmailView.isHidden = false
-        
         
         view.addSubview(loginView)
         UIView.animate(withDuration: 3, delay: 0, options: .curveEaseInOut) {
@@ -79,33 +67,24 @@ class LoginViewController: UIViewController {
                 self.loginView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 15),
                 self.loginView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -15),
                 self.loginView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
-                
             ])
         }
         UIView.animate(withDuration: 1) {
-
         }
-        
     }
     
     @IBAction func tappedCancelarLogin(_ sender: UIButton) {
-        //loginEmailView.isHidden = true
-
     }
-    
     
     @IBAction func tappedTarefas(_ sender: UIButton) {
         let tarefasVC = TarefasCriadasViewController()
         navigationController?.pushViewController(tarefasVC, animated: true)
     }
 }
-
-
 extension LoginViewController: LoginViewDelegate {
     
     func entrarClicado(email: String, password: String) {
         viewModel?.signIn(email: email, password: password)
-        
     }
     
     func cancelarClicado1() {
@@ -122,6 +101,4 @@ extension LoginViewController: LoginViewModelDelegate{
         let tarefasVC = TarefasCriadasViewController()
         navigationController?.pushViewController(tarefasVC, animated: true)
     }
-    
-    
 }

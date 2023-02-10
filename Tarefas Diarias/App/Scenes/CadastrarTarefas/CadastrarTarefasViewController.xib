@@ -130,17 +130,14 @@
                                 <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
                             </buttonConfiguration>
                         </button>
-                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kD9-2g-4fv">
-                            <rect key="frame" x="32.666666666666657" y="40" width="98" height="30"/>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="kD9-2g-4fv">
+                            <rect key="frame" x="30" y="38" width="103" height="30"/>
                             <color key="backgroundColor" systemColor="systemCyanColor"/>
                             <color key="tintColor" red="0.072233475670000005" green="0.071808718160000007" blue="0.25257731960000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="98" id="IgF-Wr-1eQ"/>
+                                <constraint firstAttribute="width" constant="103" id="IgF-Wr-1eQ"/>
                                 <constraint firstAttribute="height" constant="30" id="Qc2-fs-qLN"/>
                             </constraints>
-                            <date key="date" timeIntervalSinceReferenceDate="697600099.46193099">
-                                <!--2023-02-09 01:48:19 +0000-->
-                            </date>
                             <locale key="locale" localeIdentifier="pt_BR"/>
                             <connections>
                                 <action selector="tappedData:" destination="-1" eventType="valueChanged" id="lfT-vV-JXN"/>
@@ -151,7 +148,7 @@
                         <constraint firstAttribute="width" constant="163" id="78n-AV-6kq"/>
                         <constraint firstItem="k9o-ki-iNh" firstAttribute="top" secondItem="bQV-jC-AG6" secondAttribute="top" constant="7" id="7Ey-EX-dMK"/>
                         <constraint firstItem="WC6-nf-vEp" firstAttribute="top" secondItem="bQV-jC-AG6" secondAttribute="top" constant="6" id="MJw-NA-uBi"/>
-                        <constraint firstAttribute="bottom" secondItem="kD9-2g-4fv" secondAttribute="bottom" constant="15" id="UI1-Tk-RUu"/>
+                        <constraint firstAttribute="bottom" secondItem="kD9-2g-4fv" secondAttribute="bottom" constant="17" id="UI1-Tk-RUu"/>
                         <constraint firstItem="kD9-2g-4fv" firstAttribute="centerX" secondItem="bQV-jC-AG6" secondAttribute="centerX" id="VAf-TP-C9w"/>
                         <constraint firstItem="WC6-nf-vEp" firstAttribute="leading" secondItem="k9o-ki-iNh" secondAttribute="trailing" constant="2" id="YOK-kp-Tb8"/>
                         <constraint firstAttribute="trailing" secondItem="WC6-nf-vEp" secondAttribute="trailing" id="hRu-0n-JPf"/>
@@ -180,13 +177,16 @@
                                 <constraint firstAttribute="height" constant="34.329999999999998" id="hLE-pA-Pot"/>
                             </constraints>
                         </imageView>
-                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="yHH-Kq-dPu">
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHH-Kq-dPu">
                             <rect key="frame" x="51" y="40" width="80" height="30"/>
                             <color key="backgroundColor" systemColor="systemCyanColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="4Pr-k9-EDi"/>
                                 <constraint firstAttribute="width" constant="80" id="OFe-hx-2KD"/>
                             </constraints>
+                            <date key="date" timeIntervalSinceReferenceDate="697622400.95261097">
+                                <!--2023-02-09 08:00:00 +0000-->
+                            </date>
                             <connections>
                                 <action selector="tappedHorario:" destination="-1" eventType="valueChanged" id="fpj-H5-iBb"/>
                             </connections>
