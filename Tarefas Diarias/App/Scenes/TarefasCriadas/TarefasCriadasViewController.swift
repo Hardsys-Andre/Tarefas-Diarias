@@ -38,6 +38,8 @@ class TarefasCriadasViewController: UIViewController {
     var items = [String]()
     let defaults = UserDefaults.standard
     
+    var taskTitle: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
@@ -85,6 +87,16 @@ extension TarefasCriadasViewController: UITableViewDelegate, UITableViewDataSour
         cell?.tituloTarefaLabel.text = taskTitleAndDate
         
         return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+        let title = tasks[indexPath.row]["titulo"] as? String
+                
+                let taskDetailsViewController = ExibirTarefasCadastradasVC()
+                taskDetailsViewController.taskTitle = title
+                navigationController?.pushViewController(taskDetailsViewController, animated: true)
+            
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

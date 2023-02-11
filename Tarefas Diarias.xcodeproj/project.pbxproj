@@ -14,6 +14,8 @@
 		AC23FC07298B72D60048B3D1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC23FC06298B72D60048B3D1 /* LoginView.swift */; };
 		AC3ED1BD299686A000F342A4 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3ED1BB299686A000F342A4 /* CustomTableViewCell.swift */; };
 		AC3ED1BE299686A000F342A4 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC3ED1BC299686A000F342A4 /* CustomTableViewCell.xib */; };
+		AC3ED1C22996E9D300F342A4 /* ExibirTarefasCadastradasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3ED1C02996E9D300F342A4 /* ExibirTarefasCadastradasVC.swift */; };
+		AC3ED1C32996E9D300F342A4 /* ExibirTarefasCadastradasVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC3ED1C12996E9D300F342A4 /* ExibirTarefasCadastradasVC.xib */; };
 		AC8C7C982989CBBE00785C09 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8C7C962989CBBE00785C09 /* LoginViewController.swift */; };
 		AC8C7C992989CBBE00785C09 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC8C7C972989CBBE00785C09 /* LoginViewController.xib */; };
 		AC8C7C9B2989D7AE00785C09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC8C7C9A2989D7AE00785C09 /* GoogleService-Info.plist */; };
@@ -38,6 +40,8 @@
 		AC23FC06298B72D60048B3D1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AC3ED1BB299686A000F342A4 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		AC3ED1BC299686A000F342A4 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		AC3ED1C02996E9D300F342A4 /* ExibirTarefasCadastradasVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExibirTarefasCadastradasVC.swift; sourceTree = "<group>"; };
+		AC3ED1C12996E9D300F342A4 /* ExibirTarefasCadastradasVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExibirTarefasCadastradasVC.xib; sourceTree = "<group>"; };
 		AC8C7C962989CBBE00785C09 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AC8C7C972989CBBE00785C09 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		AC8C7C9A2989D7AE00785C09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 		AC23FBFB298B6B4A0048B3D1 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				AC3ED1BF2996E91200F342A4 /* ExibirTarefasCadastradas */,
 				AC23FBFE298B6D780048B3D1 /* MVVM */,
 				ACBDACCC298D9BE6000D9925 /* CadastrarTarefas */,
 				AC8C7C9C298A021600785C09 /* TarefasCriadas */,
@@ -174,6 +179,15 @@
 				AC3ED1BC299686A000F342A4 /* CustomTableViewCell.xib */,
 			);
 			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		AC3ED1BF2996E91200F342A4 /* ExibirTarefasCadastradas */ = {
+			isa = PBXGroup;
+			children = (
+				AC3ED1C02996E9D300F342A4 /* ExibirTarefasCadastradasVC.swift */,
+				AC3ED1C12996E9D300F342A4 /* ExibirTarefasCadastradasVC.xib */,
+			);
+			path = ExibirTarefasCadastradas;
 			sourceTree = "<group>";
 		};
 		AC8C7C952989CB8100785C09 /* LoginInicioViewController */ = {
@@ -315,6 +329,7 @@
 			files = (
 				AC8C7CA0298A02CD00785C09 /* TarefasCriadasViewController.xib in Resources */,
 				ACB9F6C329905EEE00843242 /* CadastrarTarefasViewController.xib in Resources */,
+				AC3ED1C32996E9D300F342A4 /* ExibirTarefasCadastradasVC.xib in Resources */,
 				AC8C7C992989CBBE00785C09 /* LoginViewController.xib in Resources */,
 				ACAC267F2989658F009DB8A8 /* LaunchScreen.storyboard in Resources */,
 				AC23FC05298B72C70048B3D1 /* LoginView.xib in Resources */,
@@ -382,6 +397,7 @@
 				AC0DB982298B81A6004F4F4F /* LoginViewModel.swift in Sources */,
 				AC8C7C982989CBBE00785C09 /* LoginViewController.swift in Sources */,
 				ACBDACD4298DAC85000D9925 /* GetDadosUsuario.swift in Sources */,
+				AC3ED1C22996E9D300F342A4 /* ExibirTarefasCadastradasVC.swift in Sources */,
 				ACB9F6C229905EEE00843242 /* CadastrarTarefasViewController.swift in Sources */,
 				AC8C7C9F298A02CD00785C09 /* TarefasCriadasViewController.swift in Sources */,
 				ACAC268C2989A2B8009DB8A8 /* CadastroViewController.swift in Sources */,
