@@ -9,12 +9,15 @@ import UIKit
 import FirebaseDatabase
 import FirebaseCore
 import FirebaseFirestore
+import FirebaseAuth
 
 protocol UpdateTableDelegate: AnyObject {
     func updateTable()
 }
 
 class TarefasCriadasViewController: UIViewController {
+    
+    
     
     var delegate: UpdateTableDelegate?
     
@@ -40,8 +43,12 @@ class TarefasCriadasViewController: UIViewController {
     
     var taskTitle: String?
     
+    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         delegate = self
         items = defaults.array(forKey: "tasks") as? [String] ?? [String]()
         
@@ -63,6 +70,10 @@ class TarefasCriadasViewController: UIViewController {
         addTarefas.isUserInteractionEnabled = true
         addTarefas.addGestureRecognizer(gesture)
     }
+
+    
+    
+    
     
     @objc func tappedAddTarefas(){
         let addTarefas = CadastrarTarefasViewController()
@@ -79,6 +90,7 @@ extension TarefasCriadasViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell
+        cell?.backgroundColor = .systemCyan
         let task = tasks[indexPath.row]
         
         let taskTitle = task["titulo"] as? String
@@ -108,6 +120,9 @@ extension TarefasCriadasViewController: UITableViewDelegate, UITableViewDataSour
             defaults.set(tasks, forKey: "tasks")
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 63
     }
 }
 

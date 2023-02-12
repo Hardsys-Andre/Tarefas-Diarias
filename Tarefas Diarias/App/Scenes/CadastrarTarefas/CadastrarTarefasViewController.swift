@@ -20,7 +20,8 @@ class CadastrarTarefasViewController: UIViewController {
         
         @IBOutlet weak var tituloTarefaTextField: UITextField!
         
-        @IBOutlet weak var descricaoTarefasTextField: UITextField!
+    @IBOutlet weak var descricaoTarefaTextView: UITextView!
+    
         @IBOutlet weak var btnImportante: UIButton!
         
         @IBOutlet weak var btnComum: UIButton!
@@ -58,7 +59,8 @@ class CadastrarTarefasViewController: UIViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
             alert = Alert(controller: self)
-            descricaoTarefasTextField.contentVerticalAlignment = .top
+            
+            descricaoTarefaTextView.layer.cornerRadius = 8
             
             btnImportante.layer.cornerRadius = 8
             btnImportante.layer.borderWidth = 2
@@ -135,7 +137,7 @@ class CadastrarTarefasViewController: UIViewController {
             }else{
                 
                 let task = ["titulo": tituloTarefaTextField.text as Any,
-                            "descricao": descricaoTarefasTextField.text as Any,
+                            "descricao": descricaoTarefaTextView.text as Any,
                             "prioridade": prioridade,
                             "data": dataSelecionada as Any,
                             "horario": horaSelecionada as Any,

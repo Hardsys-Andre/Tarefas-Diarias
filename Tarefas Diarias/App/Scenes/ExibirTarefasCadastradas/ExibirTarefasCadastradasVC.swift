@@ -11,7 +11,8 @@ class ExibirTarefasCadastradasVC: UIViewController {
     
     @IBOutlet weak var tituloTarefa: UITextField!
     
-    @IBOutlet weak var descricaoTarefa: UITextField!
+    
+    @IBOutlet weak var descricaoTarefa: UITextView!
     
     @IBOutlet weak var prioridadeTarefa: UITextField!
     
@@ -29,7 +30,7 @@ class ExibirTarefasCadastradasVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        descricaoTarefa.contentVerticalAlignment = .top
+        descricaoTarefa.layer.cornerRadius = 6
         
         guard let title = taskTitle else {return}
 

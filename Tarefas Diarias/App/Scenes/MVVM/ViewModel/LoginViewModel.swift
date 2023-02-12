@@ -12,19 +12,22 @@ import FirebaseFirestore
 
 protocol LoginViewModelDelegate{
     func goToTasks()
+    
 }
 
+
 class LoginViewModel{
-    
     var auth:Auth?
     //var alert: Alert?
     
-    var delegate: LoginViewModelDelegate
+    var delegate: LoginViewModelDelegate?
+ 
     
     init(delegate: LoginViewModelDelegate){
         self.delegate = delegate
         //alert = Alert(controller: self)
     }
+   
 
     func signIn(email: String, password: String){
 
@@ -57,9 +60,13 @@ class LoginViewModel{
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
+                guard let data = querySnapshot?.documents.first?.data() else { return }
+                
+                
                 print(querySnapshot?.documents.first?.data())
-                self.delegate.goToTasks()
+                self.delegate?.goToTasks()
             }
         }
     }
+
 }
