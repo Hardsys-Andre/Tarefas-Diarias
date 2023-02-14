@@ -13,45 +13,23 @@ import UIKit
 
 class CadastrarTarefasViewController: UIViewController {
     
-        
-        weak var delegate: UpdateTableDelegate?
-        
-
-        
         @IBOutlet weak var tituloTarefaTextField: UITextField!
-        
-    @IBOutlet weak var descricaoTarefaTextView: UITextView!
-    
+        @IBOutlet weak var descricaoTarefaTextView: UITextView!
         @IBOutlet weak var btnImportante: UIButton!
-        
         @IBOutlet weak var btnComum: UIButton!
-        
         @IBOutlet weak var btnEscolherData: UIButton!
-        
         @IBOutlet weak var btnEscolherHorario: UIButton!
-        
         @IBOutlet weak var dataView: UIView!
-        
         @IBOutlet weak var horarioView: UIView!
-        
         @IBOutlet weak var dataPickerData: UIDatePicker!
-        
         @IBOutlet weak var dataPickerHora: UIDatePicker!
-        
         @IBOutlet weak var btnAlimentacao: UIButton!
-        
         @IBOutlet weak var btnSaude: UIButton!
-        
         @IBOutlet weak var btnEsportes: UIButton!
-        
         @IBOutlet weak var btnTrabalho: UIButton!
-        
         @IBOutlet weak var btnDomestica: UIButton!
-        
         @IBOutlet weak var btnEscola: UIButton!
-        
         @IBOutlet weak var btnOutrasCategorias: UIButton!
-        
         @IBOutlet weak var btnCadastrarTarefa: UIButton!
         
         var alert: Alert?
@@ -84,9 +62,7 @@ class CadastrarTarefasViewController: UIViewController {
             horarioView.layer.borderColor = UIColor.cyan.cgColor
             
             dataPickerData.backgroundColor = .systemCyan
-            
             dataPickerHora.backgroundColor = .systemCyan
-            
             
             btnAlimentacao.layer.cornerRadius = 8
             btnAlimentacao.addTarget(self, action: #selector(tappedBtnAlimentacao), for: .touchUpInside)
@@ -115,16 +91,8 @@ class CadastrarTarefasViewController: UIViewController {
             //let defaults = UserDefaults.standard
             //defaults.removeObject(forKey: "tasks")
         }
-        
         var categoria: String = ""
         var prioridade: String = ""
-        
-        var atualizar = [String]()
-        func atualizaCadastro(){
-            if let data = UserDefaults.standard.array(forKey: "tasks") as? [String]{
-                atualizar = data
-            }
-        }
         
         @IBAction func tappedCadatrarTarefa(_ sender: Any) {
             
@@ -135,7 +103,6 @@ class CadastrarTarefasViewController: UIViewController {
             }else if horaSelecionada == nil {
                 self.alert?.alert(title: "Atenção", message: "Escolha um horário para sua tarefa")
             }else{
-                
                 let task = ["titulo": tituloTarefaTextField.text as Any,
                             "descricao": descricaoTarefaTextView.text as Any,
                             "prioridade": prioridade,
@@ -148,14 +115,9 @@ class CadastrarTarefasViewController: UIViewController {
                 tasks.append(task)
                 UserDefaults.standard.set(tasks, forKey: "tasks")
                 UserDefaults.standard.synchronize()
-                
-               atualizaCadastro()
-                delegate?.updateTable()
                 self.navigationController?.popViewController(animated: true)
             }
         }
-       
-        
         @objc func tappedBtnImportante(){
             prioridade = "Importante"
             btnImportante.backgroundColor = .systemCyan
@@ -163,7 +125,6 @@ class CadastrarTarefasViewController: UIViewController {
             btnComum.backgroundColor = nil
             btnComum.tintColor = .systemCyan
         }
-        
         @objc func tappedBtnComum(){
             prioridade = "Comum"
             btnComum.backgroundColor = .systemCyan
@@ -171,22 +132,18 @@ class CadastrarTarefasViewController: UIViewController {
             btnImportante.backgroundColor = nil
             btnImportante.tintColor = .systemCyan
         }
-
         var dataSelecionada: String?
-        
         @IBAction func tappedData(_ sender: UIDatePicker) {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd/MM/yyy"
             dataSelecionada = dateFormatter.string(from: sender.date)
         }
-        
         var horaSelecionada: String?
         @IBAction func tappedHorario(_ sender: UIDatePicker) {
             let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "HH:mm"
-                horaSelecionada = dateFormatter.string(from: sender.date)
+            dateFormatter.dateFormat = "HH:mm"
+            horaSelecionada = dateFormatter.string(from: sender.date)
         }
-        
         @objc func tappedBtnAlimentacao(){
             categoria = "Alimentação"
             btnAlimentacao.backgroundColor = nil
@@ -206,7 +163,6 @@ class CadastrarTarefasViewController: UIViewController {
             btnOutrasCategorias.backgroundColor = .systemPink
             btnOutrasCategorias.layer.borderWidth = 0
         }
-      
         @objc func tappedBtnSaude(){
             categoria = "Saúde"
             btnSaude.backgroundColor = nil

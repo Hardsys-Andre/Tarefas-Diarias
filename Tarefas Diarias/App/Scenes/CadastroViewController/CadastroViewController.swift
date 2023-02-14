@@ -14,15 +14,10 @@ import FirebaseStorage
 class CadastroViewController: UIViewController {
     
     @IBOutlet weak var nomeTexteField: UITextField!
-    
     @IBOutlet weak var sobrenomeTextField: UITextField!
-    
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var senhaTextField: UITextField!
-    
     @IBOutlet weak var btnCadastrar: UIButton!
-    
     @IBOutlet weak var imagemUsuario: UIImageView!
     
     var auth:Auth?
@@ -44,12 +39,10 @@ class CadastroViewController: UIViewController {
         picker.delegate = self
         picker.allowsEditing = true
         picker.sourceType = .photoLibrary
-
         present(picker, animated: true, completion: nil)
     }
 
     @IBAction func tappedCadastras(_ sender: UIButton) {
-        
         let nome: String = self.nomeTexteField.text ?? ""
         let sobrenome: String = self.sobrenomeTextField.text ?? ""
         let email: String = self.emailTextField.text ?? ""
@@ -72,30 +65,29 @@ class CadastroViewController: UIViewController {
                     "nome": nome,
                     "sobrenome": sobrenome,
                     "email": email,
-                    "image": url?.absoluteString
-                ]
-
+                    "image": url?.absoluteString]
                 self.auth?.createUser(withEmail: email, password: senha, completion: { Result, error in
                     if error != nil {
                         self.alert?.alert(title: "Atenção", message: "Falha ao cadastrar")
-
                     }else{
                         db.collection("users").addDocument(data: userData) { (error) in
                             if let error = error {
                                 print("Erro ao salvar usuário: \(error)")
                             } else {
-                                //print("Usuário salvo com sucesso")
+                                self.nomeTexteField.text = ""
+                                self.sobrenomeTextField.text = ""
+                                self.emailTextField.text = ""
+                                self.senhaTextField.text = ""
+                                self.imagemUsuario.image = UIImage(named: "galery_cam")
                                 self.alert?.alert(title: "Parabéns", message: "Cadastro realizado com sucesso")
                             }
                         }
-                       
                     }
                 })
             }
         }
     }
 }
-
 extension CadastroViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -116,4 +108,3 @@ extension CadastroViewController: UIImagePickerControllerDelegate, UINavigationC
     dismiss(animated: true, completion: nil)
   }
 }
-

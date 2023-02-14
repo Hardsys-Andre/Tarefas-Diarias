@@ -22,7 +22,7 @@ class LoginView: UIView {
     
     var delegate: LoginViewDelegate?
     
-    init(delegate: LoginViewDelegate) {
+    public init(delegate: LoginViewDelegate) {
         super.init(frame: .zero)
         setupView()
         self.delegate = delegate

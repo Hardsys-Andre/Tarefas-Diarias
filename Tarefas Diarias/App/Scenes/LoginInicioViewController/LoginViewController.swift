@@ -12,19 +12,11 @@ import FirebaseDatabase
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var btnFacebook: UIButton!
-    
     @IBOutlet weak var btnGoogle: UIButton!
-    
     @IBOutlet weak var btnEmail: UIButton!
-    
     @IBOutlet weak var logoEmail: UIImageView!
-
-    
     @IBOutlet weak var btnCadastro: UIButton!
-    
     //@IBOutlet weak var loginEmailView: UIView!
-    
-
     
     private lazy var loginView: LoginView = {
         let view = LoginView(delegate: self)
@@ -37,7 +29,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = LoginViewModel(delegate: self)
+        viewModel = LoginViewModel(delegate: self, viewController: self)
         alert = Alert(controller: self)
 
         btnFacebook.layer.cornerRadius = 8
@@ -59,7 +51,6 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func tappedLoginEmail(_ sender: UIButton) {
-        
         view.addSubview(loginView)
         UIView.animate(withDuration: 3, delay: 0, options: .curveEaseInOut) {
             NSLayoutConstraint.activate([
@@ -71,9 +62,6 @@ class LoginViewController: UIViewController {
         }
         UIView.animate(withDuration: 1) {
         }
-    }
-    
-    @IBAction func tappedCancelarLogin(_ sender: UIButton) {
     }
     
     @IBAction func tappedTarefas(_ sender: UIButton) {
@@ -94,7 +82,6 @@ extension LoginViewController: LoginViewDelegate {
 
 extension LoginViewController: LoginViewModelDelegate{
     func goToTasks() {
-        
         loginView.removeFromSuperview()
         loginView.clearFields()
 

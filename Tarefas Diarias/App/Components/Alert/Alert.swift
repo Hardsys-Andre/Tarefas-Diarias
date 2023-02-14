@@ -20,5 +20,4 @@ class Alert {
         alertController.addAction(ok)
         controller.present(alertController, animated: true)
     }
-
 }

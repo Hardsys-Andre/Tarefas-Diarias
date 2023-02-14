@@ -22,9 +22,5 @@ class CustomTableViewCell: UITableViewCell {
         super.awakeFromNib()
         backgroundColor = .systemCyan
         tasks = UserDefaults.standard.array(forKey: "tasks") as? [[String: Any]] ?? []
-    }
-
-   
-    
-    
+    } 
 }

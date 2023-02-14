@@ -12,41 +12,35 @@ import FirebaseFirestore
 
 protocol LoginViewModelDelegate{
     func goToTasks()
-    
 }
-
 
 class LoginViewModel{
     var auth:Auth?
-    //var alert: Alert?
+    var alert: Alert?
     
     var delegate: LoginViewModelDelegate?
- 
     
-    init(delegate: LoginViewModelDelegate){
-        self.delegate = delegate
-        //alert = Alert(controller: self)
-    }
+    let viewController: UIViewController
    
+    init(delegate: LoginViewModelDelegate, viewController: UIViewController){
+        self.delegate = delegate
+        self.viewController = viewController
+        alert = Alert(controller: viewController)
+    }
 
     func signIn(email: String, password: String){
 
         self.auth = Auth.auth()
         
-
         self.auth?.signIn(withEmail: email, password: password, completion: { usuario, error in
             if error != nil{
-                print ("Dados incorretos, tente novamente")
-                //self.alert?.alert(title: "Atenção", message: "Dados incorretos, tente novamente")
+                self.alert?.alert(title: "Atenção", message: "Dados incorretos, tente novamente")
             }else{
                 if usuario == nil{
-                    print("Tivemos um problema inesperado")
-                    //self.alert?.alert(title: "Atenção", message: "Tivemos um problema inesperado")
-                    
+                    self.alert?.alert(title: "Atenção", message: "Tivemos um problema inesperado")
                 }else{
                     print("Login feito com sucesso")
                     self.getDados()
-                    
                 }
             }
         })
@@ -56,17 +50,15 @@ class LoginViewModel{
         
         let db = Firestore.firestore()
         
-        db.collection("users").whereField("email", isEqualTo: "andre@gmail.com").getDocuments() { (querySnapshot, err) in
+        db.collection("users").whereField("email", isEqualTo: "hardsys@gmail.com").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
                 guard let data = querySnapshot?.documents.first?.data() else { return }
                 
-                
-                print(querySnapshot?.documents.first?.data())
+                //print(data)
                 self.delegate?.goToTasks()
             }
         }
     }
-
 }

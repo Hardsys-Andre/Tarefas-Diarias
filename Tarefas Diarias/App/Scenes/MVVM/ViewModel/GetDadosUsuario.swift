@@ -8,3 +8,6 @@
 import UIKit
 
 //var getUserLogado = LoginViewModel.getDados().querySnapshot?.documents.first?.data()
+
+
+
