@@ -22,17 +22,21 @@ class LoginView: UIView {
     
     var delegate: LoginViewDelegate?
     
+    
     public init(delegate: LoginViewDelegate) {
         super.init(frame: .zero)
         setupView()
         self.delegate = delegate
     }
+    var emailDigitado: String?
     
     func setupView() {
         Bundle.main.loadNibNamed("LoginView", owner: self)
         addSubview(contentView)
+        emailDigitado = emailTextField.text
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
     }
     
     required init?(coder: NSCoder) {

@@ -19,4 +19,6 @@ pod 'FirebaseDatabase'
 
 pod 'FSCalendar'
 
+pod 'SDWebImage'
+
 end

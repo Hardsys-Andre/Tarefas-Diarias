@@ -10,13 +10,14 @@ import FirebaseDatabase
 import FirebaseCore
 import FirebaseFirestore
 import FirebaseAuth
-
-
+import SDWebImage
 
 class TarefasCriadasViewController: UIViewController {
 
     @IBOutlet weak var dataDoDia: UILabel!
     @IBOutlet weak var userImageLogado: UIImageView!
+    
+    @IBOutlet weak var nomeUsuarioLogado: UILabel!
     @IBOutlet weak var tarefasTableView: UITableView!
     @IBOutlet weak var addTarefas: UIImageView!
     
@@ -26,6 +27,8 @@ class TarefasCriadasViewController: UIViewController {
     let defaults = UserDefaults.standard
     
     var taskTitle: String?
+    
+    var emailLogin: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +51,32 @@ class TarefasCriadasViewController: UIViewController {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(tappedAddTarefas))
         addTarefas.isUserInteractionEnabled = true
         addTarefas.addGestureRecognizer(gesture)
+        
+        usuarioRecebido()
+    }
+    var urlImage: String?
+    var nomeUsuario: String?
+    
+    private func usuarioRecebido(){
+        let db = Firestore.firestore()
+        
+        db.collection("users").whereField("email", isEqualTo: emailLogin).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                guard let data = querySnapshot?.documents.first?.data() else { return }
+                self.urlImage = data["image"] as! String
+                self.nomeUsuario = data["nome"] as! String
+                
+                if let url = URL(string: self.urlImage ?? "") {
+                    self.userImageLogado.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder.png"))
+                    self.userImageLogado.layer.borderWidth = 2
+                    self.userImageLogado.layer.borderColor = UIColor.systemCyan.cgColor
+                    self.userImageLogado.layer.cornerRadius = 10
+                }
+                self.nomeUsuarioLogado.text = self.nomeUsuario
+            }
+        }
     }
     @objc func tappedAddTarefas(){
         let addTarefas = CadastrarTarefasViewController()
