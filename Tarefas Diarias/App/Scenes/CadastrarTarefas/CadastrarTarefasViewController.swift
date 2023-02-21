@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 /*protocol UpdateTableDelegate: AnyObject {
     func updateTable()
@@ -33,10 +34,15 @@ class CadastrarTarefasViewController: UIViewController {
         @IBOutlet weak var btnCadastrarTarefa: UIButton!
         
         var alert: Alert?
+    
+    var emailLogado: String?
+
         
         override func viewDidLoad() {
             super.viewDidLoad()
             alert = Alert(controller: self)
+            
+            //print(emailLogado)
             
             descricaoTarefaTextView.layer.cornerRadius = 8
             
@@ -62,6 +68,7 @@ class CadastrarTarefasViewController: UIViewController {
             horarioView.layer.borderColor = UIColor.cyan.cgColor
             
             dataPickerData.backgroundColor = .systemCyan
+            
             dataPickerHora.backgroundColor = .systemCyan
             
             btnAlimentacao.layer.cornerRadius = 8
@@ -103,7 +110,9 @@ class CadastrarTarefasViewController: UIViewController {
             }else if horaSelecionada == nil {
                 self.alert?.alert(title: "Atenção", message: "Escolha um horário para sua tarefa")
             }else{
-                let task = ["titulo": tituloTarefaTextField.text as Any,
+                //print(emailLogado)
+                let task = ["emailUsuario": emailLogado as Any,
+                            "titulo": tituloTarefaTextField.text as Any,
                             "descricao": descricaoTarefaTextView.text as Any,
                             "prioridade": prioridade,
                             "data": dataSelecionada as Any,
@@ -113,8 +122,26 @@ class CadastrarTarefasViewController: UIViewController {
                 
                 var tasks = UserDefaults.standard.array(forKey: "tasks") as? [[String : Any]] ?? []
                 tasks.append(task)
+                //print(tasks)
+
                 UserDefaults.standard.set(tasks, forKey: "tasks")
                 UserDefaults.standard.synchronize()
+                
+                
+                
+                    let selectedDate = dataPickerData.date
+                print(selectedDate)
+                    let taskTitle = tituloTarefaTextField.text ?? ""
+                    //let taskDescription = taskDescriptionTextField.text ?? ""
+                    
+                    // Salva a tarefa no seu aplicativo
+                    
+                    NotificationHelper.shared.scheduleNotification(at: selectedDate, title: taskTitle, body: "Esta tarefa esta programada para hoje")
+                
+
+                
+                
+                
                 self.navigationController?.popViewController(animated: true)
             }
         }
@@ -132,10 +159,10 @@ class CadastrarTarefasViewController: UIViewController {
             btnImportante.backgroundColor = nil
             btnImportante.tintColor = .systemCyan
         }
-        var dataSelecionada: String?
+    var dataSelecionada: String = ""
         @IBAction func tappedData(_ sender: UIDatePicker) {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd/MM/yyy"
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             dataSelecionada = dateFormatter.string(from: sender.date)
         }
         var horaSelecionada: String?

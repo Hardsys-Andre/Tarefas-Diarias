@@ -48,7 +48,7 @@ class LoginViewModel{
     
     func getDados(){
         
-        let db = Firestore.firestore()
+        /*let db = Firestore.firestore()
         
         db.collection("users").whereField("email", isEqualTo: "hardsys@gmail.com").getDocuments() { (querySnapshot, err) in
             if let err = err {
@@ -56,9 +56,9 @@ class LoginViewModel{
             } else {
                 guard let data = querySnapshot?.documents.first?.data() else { return }
                 
-                //print(data)
+                print(data)*/
                 self.delegate?.goToTasks()
             }
-        }
-    }
+        //}
+    //}
 }

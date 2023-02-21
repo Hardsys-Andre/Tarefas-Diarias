@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseCore
 import IQKeyboardManagerSwift
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         IQKeyboardManager.shared.enable = true
+        
+       
+            // Solicita a autorização para exibir notificações
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+                if let error = error {
+                    print("Erro ao solicitar autorização para exibir notificações: \(error.localizedDescription)")
+                }
+            }
+        
+        
+        
         return true
     }
 

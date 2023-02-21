@@ -60,7 +60,6 @@ class CadastroViewController: UIViewController {
         
         storageRef.child(email).putData(imageData!, metadata: metadata) { (meta, error) in
             storageRef.child(email).downloadURL { url, errorUrl in
-                //self.imageUrl =
                 let userData: [String: Any] = [
                     "nome": nome,
                     "sobrenome": sobrenome,

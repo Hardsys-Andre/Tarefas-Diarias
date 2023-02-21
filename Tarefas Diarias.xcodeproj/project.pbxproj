@@ -27,6 +27,7 @@
 		ACAC267F2989658F009DB8A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACAC267D2989658F009DB8A8 /* LaunchScreen.storyboard */; };
 		ACAC268C2989A2B8009DB8A8 /* CadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC268A2989A2B8009DB8A8 /* CadastroViewController.swift */; };
 		ACAC268D2989A2B8009DB8A8 /* CadastroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACAC268B2989A2B8009DB8A8 /* CadastroViewController.xib */; };
+		ACB93EF4299FF40C00616B58 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB93EF3299FF40C00616B58 /* NotificationHelper.swift */; };
 		ACB9F6C229905EEE00843242 /* CadastrarTarefasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB9F6C029905EEE00843242 /* CadastrarTarefasViewController.swift */; };
 		ACB9F6C329905EEE00843242 /* CadastrarTarefasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB9F6C129905EEE00843242 /* CadastrarTarefasViewController.xib */; };
 		ACBDACD4298DAC85000D9925 /* GetDadosUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBDACD3298DAC85000D9925 /* GetDadosUsuario.swift */; };
@@ -55,6 +56,7 @@
 		ACAC26802989658F009DB8A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACAC268A2989A2B8009DB8A8 /* CadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastroViewController.swift; sourceTree = "<group>"; };
 		ACAC268B2989A2B8009DB8A8 /* CadastroViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CadastroViewController.xib; sourceTree = "<group>"; };
+		ACB93EF3299FF40C00616B58 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		ACB9F6C029905EEE00843242 /* CadastrarTarefasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastrarTarefasViewController.swift; sourceTree = "<group>"; };
 		ACB9F6C129905EEE00843242 /* CadastrarTarefasViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CadastrarTarefasViewController.xib; sourceTree = "<group>"; };
 		ACBDACD3298DAC85000D9925 /* GetDadosUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDadosUsuario.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		AC23FBFC298B6B8E0048B3D1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				ACB93EF2299FF3DE00616B58 /* Notificacoes */,
 				AC23FC03298B72870048B3D1 /* Login */,
 				AC23FBF8298B54C10048B3D1 /* Alert */,
 			);
@@ -248,6 +251,14 @@
 				ACAC268B2989A2B8009DB8A8 /* CadastroViewController.xib */,
 			);
 			path = CadastroViewController;
+			sourceTree = "<group>";
+		};
+		ACB93EF2299FF3DE00616B58 /* Notificacoes */ = {
+			isa = PBXGroup;
+			children = (
+				ACB93EF3299FF40C00616B58 /* NotificationHelper.swift */,
+			);
+			path = Notificacoes;
 			sourceTree = "<group>";
 		};
 		ACBDACCC298D9BE6000D9925 /* CadastrarTarefas */ = {
@@ -395,6 +406,7 @@
 				ACAC26732989658F009DB8A8 /* AppDelegate.swift in Sources */,
 				ACAC26752989658F009DB8A8 /* SceneDelegate.swift in Sources */,
 				AC0DB982298B81A6004F4F4F /* LoginViewModel.swift in Sources */,
+				ACB93EF4299FF40C00616B58 /* NotificationHelper.swift in Sources */,
 				AC8C7C982989CBBE00785C09 /* LoginViewController.swift in Sources */,
 				ACBDACD4298DAC85000D9925 /* GetDadosUsuario.swift in Sources */,
 				AC3ED1C22996E9D300F342A4 /* ExibirTarefasCadastradasVC.swift in Sources */,

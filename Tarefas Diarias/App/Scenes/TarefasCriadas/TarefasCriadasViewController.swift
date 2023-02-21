@@ -35,7 +35,14 @@ class TarefasCriadasViewController: UIViewController {
         
         items = defaults.array(forKey: "tasks") as? [String] ?? [String]()
         
-        tasks = UserDefaults.standard.array(forKey: "tasks") as? [[String: Any]] ?? []
+        //tasks = UserDefaults.standard.array(forKey: "tasks") as? [[String: Any]] ?? []
+        
+        if let emailLogin = emailLogin {
+            tasks = (UserDefaults.standard.array(forKey: "tasks") as? [[String: Any]] ?? [])
+                        .filter { $0["emailUsuario"] as? String == emailLogin }
+        }
+
+        
 
         let date = Date()
         let formatter = DateFormatter()
@@ -54,19 +61,21 @@ class TarefasCriadasViewController: UIViewController {
         
         usuarioRecebido()
     }
+    
+    
     var urlImage: String?
     var nomeUsuario: String?
     
     private func usuarioRecebido(){
         let db = Firestore.firestore()
         
-        db.collection("users").whereField("email", isEqualTo: emailLogin).getDocuments() { (querySnapshot, err) in
+        db.collection("users").whereField("email", isEqualTo: emailLogin as Any).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
                 guard let data = querySnapshot?.documents.first?.data() else { return }
-                self.urlImage = data["image"] as! String
-                self.nomeUsuario = data["nome"] as! String
+                self.urlImage = (data["image"] as! String)
+                self.nomeUsuario = (data["nome"] as! String)
                 
                 if let url = URL(string: self.urlImage ?? "") {
                     self.userImageLogado.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder.png"))
@@ -80,12 +89,14 @@ class TarefasCriadasViewController: UIViewController {
     }
     @objc func tappedAddTarefas(){
         let addTarefas = CadastrarTarefasViewController()
+        addTarefas.emailLogado = emailLogin
         navigationController?.pushViewController(addTarefas, animated: true)
     }
 }
 extension TarefasCriadasViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return tasks.count
     }
     
@@ -93,21 +104,29 @@ extension TarefasCriadasViewController: UITableViewDelegate, UITableViewDataSour
       
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell
         cell?.backgroundColor = .systemCyan
+        
         let task = tasks[indexPath.row]
-        let taskTitle = task["titulo"] as? String
-        let taskDate = task["data"] as? String
-        let taskTitleAndDate = taskTitle! + " - " + taskDate!
-        cell?.tituloTarefaLabel.text = taskTitleAndDate
+
+        if emailLogin == (task["emailUsuario"] as? String){
+            let taskTitle = task["titulo"] as? String
+            let taskDate = task["data"] as? String
+            let taskTitleAndDate = taskTitle! + " - " + taskDate!
+            cell?.tituloTarefaLabel.text = taskTitleAndDate
+        }
         
         return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
-        let title = tasks[indexPath.row]["titulo"] as? String
-                let taskDetailsViewController = ExibirTarefasCadastradasVC()
-                taskDetailsViewController.taskTitle = title
-                navigationController?.pushViewController(taskDetailsViewController, animated: true)
+        
+        let task = tasks[indexPath.row]
+        
+        if emailLogin == (task["emailUsuario"] as? String){
+            let title = tasks[indexPath.row]["titulo"] as? String
+            let taskDetailsViewController = ExibirTarefasCadastradasVC()
+            taskDetailsViewController.taskTitle = title
+            navigationController?.pushViewController(taskDetailsViewController, animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

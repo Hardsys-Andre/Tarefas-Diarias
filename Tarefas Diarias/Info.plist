@@ -15,6 +15,9 @@
 					<string>Default Configuration</string>
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+                    <key>NSLocalNotificationUsageDescription</key>
+                    <string>Este aplicativo gostaria de enviar notificações para lembrá-lo das tarefas agendadas.</string>
+
 				</dict>
 			</array>
 		</dict>
