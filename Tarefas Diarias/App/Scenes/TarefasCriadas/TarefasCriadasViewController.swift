@@ -125,6 +125,7 @@ extension TarefasCriadasViewController: UITableViewDelegate, UITableViewDataSour
             let title = tasks[indexPath.row]["titulo"] as? String
             let taskDetailsViewController = ExibirTarefasCadastradasVC()
             taskDetailsViewController.taskTitle = title
+            
             navigationController?.pushViewController(taskDetailsViewController, animated: true)
         }
     }

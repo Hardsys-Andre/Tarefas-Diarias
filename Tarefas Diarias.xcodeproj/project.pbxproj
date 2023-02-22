@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2D0E9097890E9AA826693097 /* Pods_Tarefas_Diarias.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F69ED512E215A8A22C277A0 /* Pods_Tarefas_Diarias.framework */; };
 		AC0DB982298B81A6004F4F4F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0DB981298B81A6004F4F4F /* LoginViewModel.swift */; };
+		AC204F7C29A6AAC00053B01E /* PrevisaoDoTempo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC204F7B29A6AAC00053B01E /* PrevisaoDoTempo.swift */; };
 		AC23FBFA298B55080048B3D1 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC23FBF9298B55080048B3D1 /* Alert.swift */; };
 		AC23FC05298B72C70048B3D1 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC23FC04298B72C70048B3D1 /* LoginView.xib */; };
 		AC23FC07298B72D60048B3D1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC23FC06298B72D60048B3D1 /* LoginView.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		1F69ED512E215A8A22C277A0 /* Pods_Tarefas_Diarias.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tarefas_Diarias.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC0DB981298B81A6004F4F4F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		AC204F7B29A6AAC00053B01E /* PrevisaoDoTempo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrevisaoDoTempo.swift; sourceTree = "<group>"; };
 		AC23FBF9298B55080048B3D1 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		AC23FC04298B72C70048B3D1 /* LoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		AC23FC06298B72D60048B3D1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		AC204F7A29A6AA8E0053B01E /* PrevisaoDoTempo */ = {
+			isa = PBXGroup;
+			children = (
+				AC204F7B29A6AAC00053B01E /* PrevisaoDoTempo.swift */,
+			);
+			path = PrevisaoDoTempo;
+			sourceTree = "<group>";
+		};
 		AC23FBF8298B54C10048B3D1 /* Alert */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +119,7 @@
 		AC23FBFC298B6B8E0048B3D1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				AC204F7A29A6AA8E0053B01E /* PrevisaoDoTempo */,
 				ACB93EF2299FF3DE00616B58 /* Notificacoes */,
 				AC23FC03298B72870048B3D1 /* Login */,
 				AC23FBF8298B54C10048B3D1 /* Alert */,
@@ -403,6 +414,7 @@
 				AC23FBFA298B55080048B3D1 /* Alert.swift in Sources */,
 				AC23FC07298B72D60048B3D1 /* LoginView.swift in Sources */,
 				AC3ED1BD299686A000F342A4 /* CustomTableViewCell.swift in Sources */,
+				AC204F7C29A6AAC00053B01E /* PrevisaoDoTempo.swift in Sources */,
 				ACAC26732989658F009DB8A8 /* AppDelegate.swift in Sources */,
 				ACAC26752989658F009DB8A8 /* SceneDelegate.swift in Sources */,
 				AC0DB982298B81A6004F4F4F /* LoginViewModel.swift in Sources */,

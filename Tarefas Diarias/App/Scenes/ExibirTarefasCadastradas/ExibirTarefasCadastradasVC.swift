@@ -10,26 +10,29 @@ import UIKit
 class ExibirTarefasCadastradasVC: UIViewController {
     
     @IBOutlet weak var tituloTarefa: UITextField!
-    
-    
     @IBOutlet weak var descricaoTarefa: UITextView!
-    
     @IBOutlet weak var prioridadeTarefa: UITextField!
-    
     @IBOutlet weak var dataTarefa: UITextField!
-    
     @IBOutlet weak var horarioTarefa: UITextField!
-    
     @IBOutlet weak var categoriaTarefa: UITextField!
-    
-    
-    
+    @IBOutlet weak var tempoSituacao: UILabel!
+    @IBOutlet weak var tempoTemperatura: UILabel!
+    @IBOutlet weak var cidadeTempo: UILabel!
     
     var taskTitle: String?
     
+    var previsaoDoTempo = PrevisaoDoTempo()
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
+        previsaoDoTempo.getPrevisao{ temperatura, condicao, cidade in
+            DispatchQueue.main.async {
+                           self.tempoTemperatura.text = "\(temperatura ?? 0.0)°C"
+                           self.tempoSituacao.text = condicao
+                           self.cidadeTempo.text = cidade
+                       }
+        }
         descricaoTarefa.layer.cornerRadius = 6
         
         guard let title = taskTitle else {return}

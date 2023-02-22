@@ -138,10 +138,6 @@ class CadastrarTarefasViewController: UIViewController {
                     
                     NotificationHelper.shared.scheduleNotification(at: selectedDate, title: taskTitle, body: "Esta tarefa esta programada para hoje")
                 
-
-                
-                
-                
                 self.navigationController?.popViewController(animated: true)
             }
         }
