@@ -123,10 +123,17 @@ class CadastrarTarefasViewController: UIViewController {
                 var tasks = UserDefaults.standard.array(forKey: "tasks") as? [[String : Any]] ?? []
                 tasks.append(task)
                 //print(tasks)
-
-                UserDefaults.standard.set(tasks, forKey: "tasks")
-                UserDefaults.standard.synchronize()
                 
+                let userDefaults = UserDefaults.standard
+                userDefaults.set(tasks, forKey: "tasks")
+                UserDefaults.standard.synchronize()
+                //print(tasks)
+                
+                let indexPath = IndexPath(row: tasks.count - 1, section: 0)
+                        if let minhaViewControllerAnterior = navigationController?.viewControllers.first as? TarefasCriadasViewController {
+                            minhaViewControllerAnterior.tarefasTableView.insertRows(at: [indexPath], with: .automatic)
+                            minhaViewControllerAnterior.tarefasTableView.reloadData()
+                        }
                 
                 
                     let selectedDate = dataPickerData.date

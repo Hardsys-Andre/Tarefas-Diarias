@@ -30,38 +30,38 @@ class TarefasCriadasViewController: UIViewController {
     
     var emailLogin: String?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        items = defaults.array(forKey: "tasks") as? [String] ?? [String]()
-        
-        //tasks = UserDefaults.standard.array(forKey: "tasks") as? [[String: Any]] ?? []
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tarefasTableView.delegate = self
+        tarefasTableView.dataSource = self
+        tarefasTableView.register(CustomTableViewCell.nib(), forCellReuseIdentifier: CustomTableViewCell.identifier)
         
         if let emailLogin = emailLogin {
             tasks = (UserDefaults.standard.array(forKey: "tasks") as? [[String: Any]] ?? [])
                         .filter { $0["emailUsuario"] as? String == emailLogin }
+            
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(tasks, forKey: "tasks")
+            UserDefaults.standard.synchronize()
+            self.tarefasTableView.reloadData()
+            
         }
-
+        usuarioRecebido()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE - dd/MMM - yyyy"
         let result = formatter.string(from: date)
         dataDoDia.text = result
         
-        tarefasTableView.delegate = self
-        tarefasTableView.dataSource = self
-        tarefasTableView.register(CustomTableViewCell.nib(), forCellReuseIdentifier: CustomTableViewCell.identifier)
-        self.tarefasTableView.reloadData()
-        
         let gesture = UITapGestureRecognizer(target: self, action: #selector(tappedAddTarefas))
         addTarefas.isUserInteractionEnabled = true
         addTarefas.addGestureRecognizer(gesture)
-        
-        usuarioRecebido()
     }
-    
     
     var urlImage: String?
     var nomeUsuario: String?
