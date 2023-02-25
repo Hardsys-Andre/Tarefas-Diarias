@@ -41,13 +41,9 @@ class LoginViewModel{
                 }else{
                     print("Login feito com sucesso")
                     
-                    
-                    // Obtenha a instância atual do UNUserNotificationCenter
                     let center = UNUserNotificationCenter.current()
 
-                    // Obtenha as notificações pendentes
                     center.getPendingNotificationRequests(completionHandler: { requests in
-                        // Verifique se há notificações para o dia atual
                         let today = Date()
                         let formatter = DateFormatter()
                         formatter.dateFormat = "yyyy-MM-dd"
@@ -65,37 +61,13 @@ class LoginViewModel{
                             }
                         }
 
-                        // Se houver tarefas agendadas para hoje, mostre um alerta na tela
                         if hasTasksForToday {
                             self.alert?.alert(title: "Atenção", message: "Você tem tarefas agendadas para o dia de hoje")
-
                         }
                     })
-
-                    
-                    
-                    
-                    
-                    
-                    self.getDados()
+                    self.delegate?.goToTasks()
                 }
             }
         })
     }
-    
-    func getDados(){
-        
-        /*let db = Firestore.firestore()
-        
-        db.collection("users").whereField("email", isEqualTo: "hardsys@gmail.com").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                guard let data = querySnapshot?.documents.first?.data() else { return }
-                
-                print(data)*/
-                self.delegate?.goToTasks()
-            }
-        //}
-    //}
 }

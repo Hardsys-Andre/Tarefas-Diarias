@@ -6,18 +6,11 @@
 //
 
 import UserNotifications
-import UIKit
 
 class NotificationHelper {
     static let shared = NotificationHelper()
     
-    
-   
-    
-    
     func scheduleNotification(at date: Date, title: String, body: String) {
-        
-      print(title)
         
         let content = UNMutableNotificationContent()
         content.title = title
@@ -29,9 +22,7 @@ class NotificationHelper {
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
         
         let request = UNNotificationRequest(identifier: title, content: content, trigger: trigger)
-        //let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
 }
-

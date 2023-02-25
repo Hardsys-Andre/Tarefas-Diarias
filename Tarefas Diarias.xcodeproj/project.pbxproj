@@ -17,6 +17,7 @@
 		AC3ED1BE299686A000F342A4 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC3ED1BC299686A000F342A4 /* CustomTableViewCell.xib */; };
 		AC3ED1C22996E9D300F342A4 /* ExibirTarefasCadastradasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3ED1C02996E9D300F342A4 /* ExibirTarefasCadastradasVC.swift */; };
 		AC3ED1C32996E9D300F342A4 /* ExibirTarefasCadastradasVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC3ED1C12996E9D300F342A4 /* ExibirTarefasCadastradasVC.xib */; };
+		AC70B0FA29AA7C4D00139A93 /* AlertPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC70B0F929AA7C4D00139A93 /* AlertPop.swift */; };
 		AC8C7C982989CBBE00785C09 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8C7C962989CBBE00785C09 /* LoginViewController.swift */; };
 		AC8C7C992989CBBE00785C09 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC8C7C972989CBBE00785C09 /* LoginViewController.xib */; };
 		AC8C7C9B2989D7AE00785C09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC8C7C9A2989D7AE00785C09 /* GoogleService-Info.plist */; };
@@ -46,6 +47,7 @@
 		AC3ED1BC299686A000F342A4 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		AC3ED1C02996E9D300F342A4 /* ExibirTarefasCadastradasVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExibirTarefasCadastradasVC.swift; sourceTree = "<group>"; };
 		AC3ED1C12996E9D300F342A4 /* ExibirTarefasCadastradasVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExibirTarefasCadastradasVC.xib; sourceTree = "<group>"; };
+		AC70B0F929AA7C4D00139A93 /* AlertPop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPop.swift; sourceTree = "<group>"; };
 		AC8C7C962989CBBE00785C09 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AC8C7C972989CBBE00785C09 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		AC8C7C9A2989D7AE00785C09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				AC23FBF9298B55080048B3D1 /* Alert.swift */,
+				AC70B0F929AA7C4D00139A93 /* AlertPop.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC70B0FA29AA7C4D00139A93 /* AlertPop.swift in Sources */,
 				AC23FBFA298B55080048B3D1 /* Alert.swift in Sources */,
 				AC23FC07298B72D60048B3D1 /* LoginView.swift in Sources */,
 				AC3ED1BD299686A000F342A4 /* CustomTableViewCell.swift in Sources */,

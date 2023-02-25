@@ -130,7 +130,7 @@
                                 <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
                             </buttonConfiguration>
                         </button>
-                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="kD9-2g-4fv">
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="kD9-2g-4fv">
                             <rect key="frame" x="30" y="38" width="103" height="30"/>
                             <color key="backgroundColor" systemColor="systemCyanColor"/>
                             <color key="tintColor" red="0.072233475670000005" green="0.071808718160000007" blue="0.25257731960000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

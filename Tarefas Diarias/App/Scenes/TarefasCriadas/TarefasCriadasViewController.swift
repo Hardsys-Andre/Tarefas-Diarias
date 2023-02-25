@@ -48,7 +48,6 @@ class TarefasCriadasViewController: UIViewController {
             userDefaults.set(tasks, forKey: "tasks")
             UserDefaults.standard.synchronize()
             self.tarefasTableView.reloadData()
-            
         }
         
         //printa todos os alarmes futuros agendado
@@ -154,14 +153,11 @@ extension TarefasCriadasViewController: UITableViewDelegate, UITableViewDataSour
             
             let taskTitle = tasks[indexPath.row]["titulo"] as? String ?? ""
             let notificationIdentifier: String = taskTitle
-            print(notificationIdentifier)
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [notificationIdentifier])
-            
             
             tasks.remove(at: indexPath.row)
             defaults.set(tasks, forKey: "tasks")
             tableView.deleteRows(at: [indexPath], with: .fade)
-
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

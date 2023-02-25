@@ -92,17 +92,13 @@ class CadastrarTarefasViewController: UIViewController {
             //let defaults = UserDefaults.standard
             //defaults.removeObject(forKey: "tasks")
             
-            
-            
             //apaga todos os alertas
             //let center2 = UNUserNotificationCenter.current()
             //center2.removeAllPendingNotificationRequests()
 
-            
         }
         var categoria: String = ""
         var prioridade: String = ""
-    
         
         @IBAction func tappedCadatrarTarefa(_ sender: Any) {
             
@@ -126,21 +122,45 @@ class CadastrarTarefasViewController: UIViewController {
                 tasks.append(task)
                 
                 let userDefaults = UserDefaults.standard
-                userDefaults.set(tasks, forKey: "tasks")
-                UserDefaults.standard.synchronize()
+                               userDefaults.set(tasks, forKey: "tasks")
+                               UserDefaults.standard.synchronize()
                 
-                    let selectedDate = dataPickerData.date
+                // crie um DateFormatter que combina a data e a hora
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+                dateFormatter.timeZone = TimeZone(identifier: "UTC")
+
+                // obtenha as informações de data e hora dos date pickers
+                let date = dataPickerData.date
+                let time = dataPickerHora.date
+
+                // combine as informações de data e hora em uma única data
+                let combinedDate = Calendar.current.date(bySettingHour: Calendar.current.component(.hour, from: time), minute: Calendar.current.component(.minute, from: time), second: 0, of: date)!
+
+                // formate a data combinada em uma string
+                let outputString = dateFormatter.string(from: combinedDate)
+
+                print(outputString) // exibe a data e hora combinadas em uma string formatada
+                
+                var outputDate: Date
+                
+                if let date = dateFormatter.date(from: outputString) {
+                    outputDate = date
+                    print(outputDate)
+                } else {
+                    outputDate = Date()
+                    print("Erro ao converter a string em uma data")
+                }
+
+                //let selectedDate = dataPickerData.date
+                let selectedDate = outputDate
                     let taskTitle = tituloTarefaTextField.text ?? ""
                     let taskDescription = descricaoTarefaTextView.text ?? ""
                 
-                    
-
                     // Salva a tarefa no seu aplicativo
-                
                     NotificationHelper.shared.scheduleNotification(at: selectedDate, title: taskTitle, body: taskDescription)
+                print(selectedDate)
 
-                
-                
                 self.navigationController?.popViewController(animated: true)
             }
         }
@@ -161,7 +181,7 @@ class CadastrarTarefasViewController: UIViewController {
     var dataSelecionada: String = ""
         @IBAction func tappedData(_ sender: UIDatePicker) {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+            dateFormatter.dateFormat = "yyyy-MM-dd"
             dataSelecionada = dateFormatter.string(from: sender.date)
         }
         var horaSelecionada: String = ""

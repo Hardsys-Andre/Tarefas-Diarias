@@ -22,7 +22,6 @@ class LoginView: UIView {
     
     var delegate: LoginViewDelegate?
     
-    
     public init(delegate: LoginViewDelegate) {
         super.init(frame: .zero)
         setupView()
@@ -36,7 +35,6 @@ class LoginView: UIView {
         emailDigitado = emailTextField.text
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
     }
     
     required init?(coder: NSCoder) {
@@ -54,7 +52,7 @@ class LoginView: UIView {
     }
     
     func clearFields() {
-        emailTextField.text = nil
+        emailTextField.text = ""
         passwordTextField.text = ""
     }
 }

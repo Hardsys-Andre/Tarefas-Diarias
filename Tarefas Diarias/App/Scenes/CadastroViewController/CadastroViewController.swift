@@ -22,12 +22,15 @@ class CadastroViewController: UIViewController {
     
     var auth:Auth?
     var alert:Alert?
+    var alertPop:AlertPop?
     var imageUrl: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.auth = Auth.auth()
         alert = Alert(controller: self)
+        alertPop = AlertPop(controller: self)
+
         btnCadastrar.layer.cornerRadius = 8
         let gesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
         imagemUsuario.isUserInteractionEnabled = true
@@ -64,25 +67,32 @@ class CadastroViewController: UIViewController {
                     "nome": nome,
                     "sobrenome": sobrenome,
                     "email": email,
-                    "image": url?.absoluteString]
-                self.auth?.createUser(withEmail: email, password: senha, completion: { Result, error in
-                    if error != nil {
-                        self.alert?.alert(title: "Atenção", message: "Falha ao cadastrar")
+                    "image": url?.absoluteString as Any]
+                
+                self.auth?.createUser(withEmail: email, password: senha) { authResult, error in
+                    if let error = error {
+                            if error.localizedDescription.contains("email") && error.localizedDescription.contains("already in use") {
+                                self.alert?.alert(title: "Atenção", message: "Este email já está cadastrado")
+                                return
+                            }
+                            self.alert?.alert(title: "Atenção", message: "Falha ao cadastrar")
+                            return
                     }else{
                         db.collection("users").addDocument(data: userData) { (error) in
                             if let error = error {
-                                print("Erro ao salvar usuário: \(error)")
+                                self.alert?.alert(title: "Atenção", message: "Erro ao salvar usuário: \(error)")
                             } else {
                                 self.nomeTexteField.text = ""
                                 self.sobrenomeTextField.text = ""
                                 self.emailTextField.text = ""
                                 self.senhaTextField.text = ""
                                 self.imagemUsuario.image = UIImage(named: "galery_cam")
-                                self.alert?.alert(title: "Parabéns", message: "Cadastro realizado com sucesso")
+                                
+                                self.alertPop?.alertPop(title: "Parabéns", message: "Cadastro realizado com sucesso")
                             }
                         }
                     }
-                })
+                }
             }
         }
     }
