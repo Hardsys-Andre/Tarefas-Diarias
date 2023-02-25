@@ -40,6 +40,43 @@ class LoginViewModel{
                     self.alert?.alert(title: "Atenção", message: "Tivemos um problema inesperado")
                 }else{
                     print("Login feito com sucesso")
+                    
+                    
+                    // Obtenha a instância atual do UNUserNotificationCenter
+                    let center = UNUserNotificationCenter.current()
+
+                    // Obtenha as notificações pendentes
+                    center.getPendingNotificationRequests(completionHandler: { requests in
+                        // Verifique se há notificações para o dia atual
+                        let today = Date()
+                        let formatter = DateFormatter()
+                        formatter.dateFormat = "yyyy-MM-dd"
+                        let todayString = formatter.string(from: today)
+
+                        var hasTasksForToday = false
+                        for request in requests {
+                            if let trigger = request.trigger as? UNCalendarNotificationTrigger,
+                               let date = trigger.nextTriggerDate() {
+                                let dateString = formatter.string(from: date)
+                                if dateString == todayString {
+                                    hasTasksForToday = true
+                                    break
+                                }
+                            }
+                        }
+
+                        // Se houver tarefas agendadas para hoje, mostre um alerta na tela
+                        if hasTasksForToday {
+                            self.alert?.alert(title: "Atenção", message: "Você tem tarefas agendadas para o dia de hoje")
+
+                        }
+                    })
+
+                    
+                    
+                    
+                    
+                    
                     self.getDados()
                 }
             }

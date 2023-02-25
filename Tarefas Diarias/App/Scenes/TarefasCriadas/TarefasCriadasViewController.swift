@@ -32,6 +32,10 @@ class TarefasCriadasViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        TaskManager.shared.removeOldTasks()
+        
+        
         tarefasTableView.delegate = self
         tarefasTableView.dataSource = self
         tarefasTableView.register(CustomTableViewCell.nib(), forCellReuseIdentifier: CustomTableViewCell.identifier)
@@ -46,6 +50,18 @@ class TarefasCriadasViewController: UIViewController {
             self.tarefasTableView.reloadData()
             
         }
+        
+        //printa todos os alarmes futuros agendado
+        let center = UNUserNotificationCenter.current()
+        center.getPendingNotificationRequests(completionHandler: { requests in
+            for request in requests {
+                print(request.identifier)
+                print(request.content.title)
+                print(request.content.body)
+                print(request.trigger as Any)
+            }
+        })
+        
         usuarioRecebido()
     }
     
@@ -135,9 +151,17 @@ extension TarefasCriadasViewController: UITableViewDelegate, UITableViewDataSour
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
+            
+            let taskTitle = tasks[indexPath.row]["titulo"] as? String ?? ""
+            let notificationIdentifier: String = taskTitle
+            print(notificationIdentifier)
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [notificationIdentifier])
+            
+            
             tasks.remove(at: indexPath.row)
             defaults.set(tasks, forKey: "tasks")
             tableView.deleteRows(at: [indexPath], with: .fade)
+
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

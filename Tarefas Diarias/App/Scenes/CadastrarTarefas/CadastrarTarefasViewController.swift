@@ -6,11 +6,6 @@
 //
 
 import UIKit
-import UserNotifications
-
-/*protocol UpdateTableDelegate: AnyObject {
-    func updateTable()
-}*/
 
 class CadastrarTarefasViewController: UIViewController {
     
@@ -36,14 +31,13 @@ class CadastrarTarefasViewController: UIViewController {
         var alert: Alert?
     
     var emailLogado: String?
+    var tituloTarefa: String = ""
 
         
         override func viewDidLoad() {
             super.viewDidLoad()
             alert = Alert(controller: self)
-            
-            //print(emailLogado)
-            
+                    
             descricaoTarefaTextView.layer.cornerRadius = 8
             
             btnImportante.layer.cornerRadius = 8
@@ -97,20 +91,28 @@ class CadastrarTarefasViewController: UIViewController {
             //Apagar todos os itens do userDefaults
             //let defaults = UserDefaults.standard
             //defaults.removeObject(forKey: "tasks")
+            
+            
+            
+            //apaga todos os alertas
+            //let center2 = UNUserNotificationCenter.current()
+            //center2.removeAllPendingNotificationRequests()
+
+            
         }
         var categoria: String = ""
         var prioridade: String = ""
+    
         
         @IBAction func tappedCadatrarTarefa(_ sender: Any) {
             
             if tituloTarefaTextField.text == "" {
                 self.alert?.alert(title: "Atenção", message: "Cadastre um título para sua tarefa")
-            }else if dataSelecionada == nil {
+            }else if dataSelecionada == "" {
                 self.alert?.alert(title: "Atenção", message: "Escolha uma data para sua tarefa")
-            }else if horaSelecionada == nil {
+            }else if horaSelecionada == "" {
                 self.alert?.alert(title: "Atenção", message: "Escolha um horário para sua tarefa")
             }else{
-                //print(emailLogado)
                 let task = ["emailUsuario": emailLogado as Any,
                             "titulo": tituloTarefaTextField.text as Any,
                             "descricao": descricaoTarefaTextView.text as Any,
@@ -122,28 +124,22 @@ class CadastrarTarefasViewController: UIViewController {
                 
                 var tasks = UserDefaults.standard.array(forKey: "tasks") as? [[String : Any]] ?? []
                 tasks.append(task)
-                //print(tasks)
                 
                 let userDefaults = UserDefaults.standard
                 userDefaults.set(tasks, forKey: "tasks")
                 UserDefaults.standard.synchronize()
-                //print(tasks)
-                
-                let indexPath = IndexPath(row: tasks.count - 1, section: 0)
-                        if let minhaViewControllerAnterior = navigationController?.viewControllers.first as? TarefasCriadasViewController {
-                            minhaViewControllerAnterior.tarefasTableView.insertRows(at: [indexPath], with: .automatic)
-                            minhaViewControllerAnterior.tarefasTableView.reloadData()
-                        }
-                
                 
                     let selectedDate = dataPickerData.date
-                print(selectedDate)
                     let taskTitle = tituloTarefaTextField.text ?? ""
-                    //let taskDescription = taskDescriptionTextField.text ?? ""
+                    let taskDescription = descricaoTarefaTextView.text ?? ""
+                
                     
+
                     // Salva a tarefa no seu aplicativo
-                    
-                    NotificationHelper.shared.scheduleNotification(at: selectedDate, title: taskTitle, body: "Esta tarefa esta programada para hoje")
+                
+                    NotificationHelper.shared.scheduleNotification(at: selectedDate, title: taskTitle, body: taskDescription)
+
+                
                 
                 self.navigationController?.popViewController(animated: true)
             }
@@ -165,10 +161,10 @@ class CadastrarTarefasViewController: UIViewController {
     var dataSelecionada: String = ""
         @IBAction func tappedData(_ sender: UIDatePicker) {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
             dataSelecionada = dateFormatter.string(from: sender.date)
         }
-        var horaSelecionada: String?
+        var horaSelecionada: String = ""
         @IBAction func tappedHorario(_ sender: UIDatePicker) {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "HH:mm"

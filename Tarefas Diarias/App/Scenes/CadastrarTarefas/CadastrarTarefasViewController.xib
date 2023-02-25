@@ -138,6 +138,7 @@
                                 <constraint firstAttribute="width" constant="103" id="IgF-Wr-1eQ"/>
                                 <constraint firstAttribute="height" constant="30" id="Qc2-fs-qLN"/>
                             </constraints>
+                            <locale key="locale" localeIdentifier="en_US"/>
                             <connections>
                                 <action selector="tappedData:" destination="-1" eventType="valueChanged" id="lfT-vV-JXN"/>
                             </connections>
