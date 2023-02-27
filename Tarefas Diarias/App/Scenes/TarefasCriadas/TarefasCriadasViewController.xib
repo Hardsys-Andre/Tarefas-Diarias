@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TarefasCriadasViewController" customModule="Tarefas_Diarias" customModuleProvider="target">
             <connections>
                 <outlet property="addTarefas" destination="0Fw-FM-idS" id="SjE-Iw-Q0x"/>
+                <outlet property="backButtonImage" destination="hH2-Q8-LBx" id="YLg-DX-5tc"/>
                 <outlet property="dataDoDia" destination="BxT-lt-GRq" id="nfq-Vl-ksq"/>
                 <outlet property="nomeUsuarioLogado" destination="9j0-96-JrB" id="WGK-Zd-Bgn"/>
                 <outlet property="tarefasTableView" destination="7zL-iY-P7E" id="6fP-uw-thV"/>
@@ -24,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minhas Tarefas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Sc-Z3-sTO">
-                    <rect key="frame" x="28" y="88" width="161.33333333333334" height="50"/>
+                    <rect key="frame" x="28" y="139" width="161.33333333333334" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="Gpd-U6-Ifa"/>
                     </constraints>
@@ -43,7 +44,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_usuario" translatesAutoresizingMaskIntoConstraints="NO" id="Z28-A9-cCs">
-                    <rect key="frame" x="275" y="78" width="70" height="70"/>
+                    <rect key="frame" x="275" y="129" width="70" height="70"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="70" id="vkn-uB-EeA"/>
                         <constraint firstAttribute="height" constant="70" id="ysX-FL-mru"/>
@@ -54,7 +55,7 @@
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usuário" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9j0-96-JrB">
-                    <rect key="frame" x="255" y="162" width="110" height="24"/>
+                    <rect key="frame" x="255" y="213" width="110" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" systemColor="systemCyanColor"/>
                     <nil key="highlightedColor"/>
@@ -63,6 +64,13 @@
                     <rect key="frame" x="16" y="200" width="361" height="500"/>
                     <color key="backgroundColor" red="0.072233475670000005" green="0.071808718160000007" blue="0.25257731960000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </tableView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Botão Back" translatesAutoresizingMaskIntoConstraints="NO" id="hH2-Q8-LBx">
+                    <rect key="frame" x="16" y="65" width="30" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="Sap-d4-uYT"/>
+                        <constraint firstAttribute="width" constant="30" id="rAT-Zk-uut"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.072233475670000005" green="0.071808718160000007" blue="0.25257731960000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -79,16 +87,19 @@
                 <constraint firstItem="Z28-A9-cCs" firstAttribute="centerY" secondItem="5Sc-Z3-sTO" secondAttribute="centerY" id="WwH-2G-MBs"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7zL-iY-P7E" secondAttribute="trailing" constant="16" id="X7L-vd-jqF"/>
                 <constraint firstItem="BxT-lt-GRq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="59" id="Zyc-hR-urW"/>
+                <constraint firstItem="hH2-Q8-LBx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="6" id="gA8-Cg-ukU"/>
                 <constraint firstItem="0Fw-FM-idS" firstAttribute="centerX" secondItem="7zL-iY-P7E" secondAttribute="centerX" id="gbq-AP-aZi"/>
-                <constraint firstItem="5Sc-Z3-sTO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="29" id="jTS-b9-VdR"/>
+                <constraint firstItem="5Sc-Z3-sTO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="jTS-b9-VdR"/>
                 <constraint firstItem="9j0-96-JrB" firstAttribute="top" secondItem="Z28-A9-cCs" secondAttribute="bottom" constant="14" id="o53-qE-FEy"/>
                 <constraint firstItem="9j0-96-JrB" firstAttribute="centerX" secondItem="Z28-A9-cCs" secondAttribute="centerX" id="qfg-CQ-u4I"/>
+                <constraint firstItem="hH2-Q8-LBx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="u3E-MG-tVs"/>
                 <constraint firstItem="5Sc-Z3-sTO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="28" id="wYT-eJ-YrS"/>
             </constraints>
             <point key="canvasLocation" x="136.64122137404578" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>
+        <image name="Botão Back" width="39" height="60"/>
         <image name="add_preto" width="200" height="200"/>
         <image name="avatar_usuario" width="820" height="606"/>
         <systemColor name="systemCyanColor">

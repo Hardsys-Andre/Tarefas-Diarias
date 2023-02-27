@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CadastrarTarefasViewController" customModule="Tarefas_Diarias" customModuleProvider="target">
             <connections>
+                <outlet property="backButtonImage" destination="fPB-ej-6Tw" id="w7j-Bc-p64"/>
                 <outlet property="btnAlimentacao" destination="o2q-6I-Q0e" id="0Ra-Sd-PtM"/>
                 <outlet property="btnCadastrarTarefa" destination="3FZ-74-Wyj" id="7h3-fJ-cB1"/>
                 <outlet property="btnComum" destination="Uz1-wj-Y5e" id="tVw-gR-Yig"/>
@@ -302,6 +303,13 @@
                     <color key="textColor" systemColor="systemCyanColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Botão Back" translatesAutoresizingMaskIntoConstraints="NO" id="fPB-ej-6Tw">
+                    <rect key="frame" x="10" y="65" width="30" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="INX-vj-A62"/>
+                        <constraint firstAttribute="width" constant="30" id="iP5-Bi-vpx"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.072233475670000005" green="0.071808718160000007" blue="0.25257731960000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -350,15 +358,18 @@
                 <constraint firstItem="o2q-6I-Q0e" firstAttribute="top" secondItem="4df-Ra-17Q" secondAttribute="bottom" constant="8" symbolic="YES" id="p95-oh-xOn"/>
                 <constraint firstItem="3FZ-74-Wyj" firstAttribute="centerX" secondItem="kd8-m7-wvM" secondAttribute="centerX" id="pEO-2z-JgJ"/>
                 <constraint firstItem="kd8-m7-wvM" firstAttribute="leading" secondItem="WsT-Mz-Go3" secondAttribute="trailing" constant="11" id="pa7-G7-44h"/>
+                <constraint firstItem="fPB-ej-6Tw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="pmb-uv-kln"/>
                 <constraint firstItem="Uz1-wj-Y5e" firstAttribute="top" secondItem="ZFA-SI-fH9" secondAttribute="bottom" constant="2" id="qh4-Fg-lux"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OPi-4t-Zdv" secondAttribute="trailing" constant="20" id="ryE-GQ-Njr"/>
                 <constraint firstItem="cw8-GX-gZn" firstAttribute="trailing" secondItem="327-ED-QpW" secondAttribute="trailing" id="t0V-u7-366"/>
+                <constraint firstItem="fPB-ej-6Tw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="6" id="v8U-hp-KDS"/>
                 <constraint firstItem="327-ED-QpW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="wU2-h1-tRx"/>
             </constraints>
             <point key="canvasLocation" x="138.1679389312977" y="20.422535211267608"/>
         </view>
     </objects>
     <resources>
+        <image name="Botão Back" width="39" height="60"/>
         <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="timer" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">

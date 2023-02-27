@@ -9,6 +9,8 @@ import UIKit
 
 class ExibirTarefasCadastradasVC: UIViewController {
     
+    @IBOutlet weak var backButtonImage: UIImageView!
+    
     @IBOutlet weak var tituloTarefa: UITextField!
     @IBOutlet weak var descricaoTarefa: UITextView!
     @IBOutlet weak var prioridadeTarefa: UITextField!
@@ -23,8 +25,17 @@ class ExibirTarefasCadastradasVC: UIViewController {
     
     var previsaoDoTempo = PrevisaoDoTempo()
   
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(tappedBackButton))
+        backButtonImage.isUserInteractionEnabled = true
+        backButtonImage.addGestureRecognizer(gesture)
        
         previsaoDoTempo.getPrevisao{ temperatura, condicao, cidade in
             DispatchQueue.main.async {
@@ -50,4 +61,7 @@ class ExibirTarefasCadastradasVC: UIViewController {
             categoriaTarefa.text = task["categoria"] as? String
             }
         }
+    @objc func tappedBackButton(){
+        navigationController?.popViewController(animated: true)
+    }
 }

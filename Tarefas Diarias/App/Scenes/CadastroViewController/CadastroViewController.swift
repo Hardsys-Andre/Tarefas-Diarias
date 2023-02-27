@@ -13,6 +13,8 @@ import FirebaseStorage
 
 class CadastroViewController: UIViewController {
     
+    @IBOutlet weak var backButtonImage: UIImageView!
+    
     @IBOutlet weak var nomeTexteField: UITextField!
     @IBOutlet weak var sobrenomeTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -25,16 +27,29 @@ class CadastroViewController: UIViewController {
     var alertPop:AlertPop?
     var imageUrl: String?
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.auth = Auth.auth()
         alert = Alert(controller: self)
         alertPop = AlertPop(controller: self)
+        
+        let gestureBack = UITapGestureRecognizer(target: self, action: #selector(tappedBackButton))
+        backButtonImage.isUserInteractionEnabled = true
+        backButtonImage.addGestureRecognizer(gestureBack)
 
         btnCadastrar.layer.cornerRadius = 8
         let gesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
         imagemUsuario.isUserInteractionEnabled = true
         imagemUsuario.addGestureRecognizer(gesture)
+    }
+    
+    @objc func tappedBackButton(){
+        navigationController?.popViewController(animated: true)
     }
     
     @objc private func imageTapped() {

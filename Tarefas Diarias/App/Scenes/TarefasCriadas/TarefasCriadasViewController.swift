@@ -13,7 +13,9 @@ import FirebaseAuth
 import SDWebImage
 
 class TarefasCriadasViewController: UIViewController {
-
+    
+    @IBOutlet weak var backButtonImage: UIImageView!
+    
     @IBOutlet weak var dataDoDia: UILabel!
     @IBOutlet weak var userImageLogado: UIImageView!
     
@@ -30,9 +32,10 @@ class TarefasCriadasViewController: UIViewController {
     
     var emailLogin: String?
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        navigationController?.setNavigationBarHidden(true, animated: false)
         TaskManager.shared.removeOldTasks()
         
         
@@ -51,7 +54,7 @@ class TarefasCriadasViewController: UIViewController {
         }
         
         //printa todos os alarmes futuros agendado
-        let center = UNUserNotificationCenter.current()
+        /*let center = UNUserNotificationCenter.current()
         center.getPendingNotificationRequests(completionHandler: { requests in
             for request in requests {
                 print(request.identifier)
@@ -59,7 +62,7 @@ class TarefasCriadasViewController: UIViewController {
                 print(request.content.body)
                 print(request.trigger as Any)
             }
-        })
+        })*/
         
         usuarioRecebido()
     }
@@ -73,9 +76,17 @@ class TarefasCriadasViewController: UIViewController {
         let result = formatter.string(from: date)
         dataDoDia.text = result
         
+        let gestureBack = UITapGestureRecognizer(target: self, action: #selector(tappedBackButton))
+        backButtonImage.isUserInteractionEnabled = true
+        backButtonImage.addGestureRecognizer(gestureBack)
+        
         let gesture = UITapGestureRecognizer(target: self, action: #selector(tappedAddTarefas))
         addTarefas.isUserInteractionEnabled = true
         addTarefas.addGestureRecognizer(gesture)
+    }
+    
+    @objc func tappedBackButton(){
+        navigationController?.popViewController(animated: true)
     }
     
     var urlImage: String?

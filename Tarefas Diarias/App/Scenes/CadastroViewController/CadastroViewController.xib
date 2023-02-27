@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CadastroViewController" customModule="Tarefas_Diarias" customModuleProvider="target">
             <connections>
+                <outlet property="backButtonImage" destination="Rrh-ZG-zUT" id="m5k-iJ-uiC"/>
                 <outlet property="btnCadastrar" destination="tN2-J3-efI" id="chm-56-CMC"/>
                 <outlet property="emailTextField" destination="wp8-Pf-Cof" id="70L-4K-rmA"/>
                 <outlet property="imagemUsuario" destination="pU5-sa-q4s" id="uNB-s4-gl3"/>
@@ -120,6 +121,13 @@
                         <constraint firstAttribute="height" constant="150" id="gHa-sC-rUL"/>
                     </constraints>
                 </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Botão Back" translatesAutoresizingMaskIntoConstraints="NO" id="Rrh-ZG-zUT">
+                    <rect key="frame" x="20" y="55" width="30" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="rZ9-N8-pR1"/>
+                        <constraint firstAttribute="width" constant="30" id="sRD-bw-82R"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.072233475670000005" green="0.071808718160000007" blue="0.25257731960000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -128,6 +136,7 @@
                 <constraint firstItem="LU9-uW-sLz" firstAttribute="top" secondItem="wp8-Pf-Cof" secondAttribute="bottom" constant="20" id="17Z-DN-LJl"/>
                 <constraint firstItem="XW8-Sc-zwg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="435-3Q-j4z"/>
                 <constraint firstItem="tN2-J3-efI" firstAttribute="centerX" secondItem="JlS-0C-ufQ" secondAttribute="centerX" id="4vW-fx-J5t"/>
+                <constraint firstItem="Rrh-ZG-zUT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="6aA-w8-deo"/>
                 <constraint firstItem="hYT-cE-63X" firstAttribute="leading" secondItem="XW8-Sc-zwg" secondAttribute="trailing" constant="94" id="FFw-oA-B82"/>
                 <constraint firstItem="XW8-Sc-zwg" firstAttribute="leading" secondItem="4mJ-Yt-A5i" secondAttribute="leading" id="FSy-Xo-mDG"/>
                 <constraint firstItem="wp8-Pf-Cof" firstAttribute="top" secondItem="8sY-mN-Xz4" secondAttribute="bottom" constant="57.333333333333314" id="GEk-tG-lGI"/>
@@ -135,6 +144,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dQd-dX-E3y" secondAttribute="trailing" constant="16" id="H6k-TK-6La"/>
                 <constraint firstItem="YQN-9p-OhP" firstAttribute="centerY" secondItem="8sY-mN-Xz4" secondAttribute="centerY" id="JfT-hF-ZNv"/>
                 <constraint firstItem="pU5-sa-q4s" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="55" id="KAX-8U-NVZ"/>
+                <constraint firstItem="Rrh-ZG-zUT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="55" id="Mp6-cX-H84"/>
                 <constraint firstItem="pU5-sa-q4s" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="121" id="Nh8-0I-0Ju"/>
                 <constraint firstItem="wp8-Pf-Cof" firstAttribute="leading" secondItem="JlS-0C-ufQ" secondAttribute="leading" id="NlH-q5-AiH"/>
                 <constraint firstItem="8sY-mN-Xz4" firstAttribute="trailing" secondItem="wp8-Pf-Cof" secondAttribute="trailing" id="Ptr-yd-vCX"/>
@@ -161,6 +171,7 @@
         </view>
     </objects>
     <resources>
+        <image name="Botão Back" width="39" height="60"/>
         <image name="galery_cam" width="512" height="512"/>
         <systemColor name="systemCyanColor">
             <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -9,6 +9,8 @@ import UIKit
 
 class CadastrarTarefasViewController: UIViewController {
     
+    @IBOutlet weak var backButtonImage: UIImageView!
+    
         @IBOutlet weak var tituloTarefaTextField: UITextField!
         @IBOutlet weak var descricaoTarefaTextView: UITextView!
         @IBOutlet weak var btnImportante: UIButton!
@@ -33,10 +35,19 @@ class CadastrarTarefasViewController: UIViewController {
     var emailLogado: String?
     var tituloTarefa: String = ""
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
         
-        override func viewDidLoad() {
+    
+    override func viewDidLoad() {
             super.viewDidLoad()
             alert = Alert(controller: self)
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(tappedBackButton))
+        backButtonImage.isUserInteractionEnabled = true
+        backButtonImage.addGestureRecognizer(gesture)
                     
             descricaoTarefaTextView.layer.cornerRadius = 8
             
@@ -97,6 +108,9 @@ class CadastrarTarefasViewController: UIViewController {
             //center2.removeAllPendingNotificationRequests()
 
         }
+    @objc func tappedBackButton(){
+        navigationController?.popViewController(animated: true)
+    }
         var categoria: String = ""
         var prioridade: String = ""
         
