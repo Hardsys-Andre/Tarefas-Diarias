@@ -83,7 +83,6 @@ extension LoginViewController: LoginViewDelegate {
 extension LoginViewController: LoginViewModelDelegate{
     func goToTasks() {
         let tarefasVC = TarefasCriadasViewController()
-        let loginVC = LoginView(delegate: self)
         tarefasVC.emailLogin = loginView.emailTextField.text
         navigationController?.pushViewController(tarefasVC, animated: true)
 

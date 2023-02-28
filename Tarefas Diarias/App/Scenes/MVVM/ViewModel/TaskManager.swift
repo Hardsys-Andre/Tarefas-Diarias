@@ -25,15 +25,11 @@ class TaskManager {
         let currentDate = Date()
         let newTasks = tasks.filter { task in
             if let dateString = task["data"] as? String, let date = dateFormatter.date(from: dateString) {
-                //print(date)
                 return date >= currentDate
             }
             return true
         }
         userDefaults.set(newTasks, forKey: "tasks")
-        //print(newTasks)
-        
     }
-    
 }
 

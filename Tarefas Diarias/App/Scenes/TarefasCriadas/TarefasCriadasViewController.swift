@@ -15,10 +15,8 @@ import SDWebImage
 class TarefasCriadasViewController: UIViewController {
     
     @IBOutlet weak var backButtonImage: UIImageView!
-    
     @IBOutlet weak var dataDoDia: UILabel!
     @IBOutlet weak var userImageLogado: UIImageView!
-    
     @IBOutlet weak var nomeUsuarioLogado: UILabel!
     @IBOutlet weak var tarefasTableView: UITableView!
     @IBOutlet weak var addTarefas: UIImageView!
@@ -29,15 +27,13 @@ class TarefasCriadasViewController: UIViewController {
     let defaults = UserDefaults.standard
     
     var taskTitle: String?
-    
     var emailLogin: String?
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
-        TaskManager.shared.removeOldTasks()
         
+        TaskManager.shared.removeOldTasks()
         
         tarefasTableView.delegate = self
         tarefasTableView.dataSource = self
@@ -122,14 +118,12 @@ class TarefasCriadasViewController: UIViewController {
 extension TarefasCriadasViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell
-        cell?.backgroundColor = .systemCyan
         
         let task = tasks[indexPath.row]
 

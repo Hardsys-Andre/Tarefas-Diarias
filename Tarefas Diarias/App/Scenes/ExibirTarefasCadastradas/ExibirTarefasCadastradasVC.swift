@@ -11,6 +11,8 @@ class ExibirTarefasCadastradasVC: UIViewController {
     
     @IBOutlet weak var backButtonImage: UIImageView!
     
+    
+    @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var tituloTarefa: UITextField!
     @IBOutlet weak var descricaoTarefa: UITextView!
     @IBOutlet weak var prioridadeTarefa: UITextField!
@@ -37,11 +39,29 @@ class ExibirTarefasCadastradasVC: UIViewController {
         backButtonImage.isUserInteractionEnabled = true
         backButtonImage.addGestureRecognizer(gesture)
        
-        previsaoDoTempo.getPrevisao{ temperatura, condicao, cidade in
+        previsaoDoTempo.getPrevisao{ temperatura, condicao, cidade, icon in
             DispatchQueue.main.async {
                            self.tempoTemperatura.text = "\(temperatura ?? 0.0)°C"
                            self.tempoSituacao.text = condicao
                            self.cidadeTempo.text = cidade
+                
+                // Converta o valor da chave "icon" em uma URL
+                        let iconUrl = URL(string: "https://openweathermap.org/img/w/\(icon ?? "").png")!
+
+                        // Carregue a imagem usando a URL
+                        let task = URLSession.shared.dataTask(with: iconUrl) { (data, response, error) in
+                            if let data = data {
+                                // Crie uma imagem a partir dos dados baixados
+                                let image = UIImage(data: data)
+
+                                // Atualize a imagem da UIImageView na thread principal
+                                DispatchQueue.main.async {
+                                    self.iconImage.image = image
+                                }
+                            }
+                        }
+                        task.resume()
+                    
                        }
         }
         descricaoTarefa.layer.cornerRadius = 6

@@ -14,7 +14,7 @@ protocol LoginViewModelDelegate{
     func goToTasks()
 }
 
-class LoginViewModel{
+class LoginViewModel {
     var auth:Auth?
     var alert: Alert?
     

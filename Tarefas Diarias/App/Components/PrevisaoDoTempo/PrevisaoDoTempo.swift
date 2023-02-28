@@ -33,7 +33,7 @@ class PrevisaoDoTempo {
         //let id: Int
         //let main: String
         let description: String
-       //let icon: String
+        let icon: String
     }
     
     struct Main: Codable {
@@ -65,7 +65,7 @@ class PrevisaoDoTempo {
         let sunset: Int
     }*/
     
-    func getPrevisao(completion: @escaping (Double?, String?, String?) -> Void) {
+    func getPrevisao(completion: @escaping (Double?, String?, String?, String?) -> Void) {
         let apiKey = "6442204c2436afcc2a5841485c583f0d"
         let city = "Piquete"
         let urlString = "https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=\(apiKey)&units=metric&lang=pt_br"
@@ -79,11 +79,12 @@ class PrevisaoDoTempo {
                     let temperatura = weatherData.main.temp
                     let condicao = weatherData.weather[0].description
                     let cidade = weatherData.name
+                    let icon = weatherData.weather[0].icon
                    
-                    completion(temperatura, condicao, cidade)
+                    completion(temperatura, condicao, cidade, icon)
                 } catch {
                     print(error)
-                    completion(nil, nil, nil)
+                    completion(nil, nil, nil, nil)
                 }
             }
         }.resume()

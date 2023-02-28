@@ -154,26 +154,21 @@ class CadastrarTarefasViewController: UIViewController {
                 // formate a data combinada em uma string
                 let outputString = dateFormatter.string(from: combinedDate)
 
-                print(outputString) // exibe a data e hora combinadas em uma string formatada
-                
                 var outputDate: Date
                 
                 if let date = dateFormatter.date(from: outputString) {
                     outputDate = date
-                    print(outputDate)
                 } else {
                     outputDate = Date()
                     print("Erro ao converter a string em uma data")
                 }
 
-                //let selectedDate = dataPickerData.date
                 let selectedDate = outputDate
                     let taskTitle = tituloTarefaTextField.text ?? ""
                     let taskDescription = descricaoTarefaTextView.text ?? ""
                 
                     // Salva a tarefa no seu aplicativo
                     NotificationHelper.shared.scheduleNotification(at: selectedDate, title: taskTitle, body: taskDescription)
-                print(selectedDate)
 
                 self.navigationController?.popViewController(animated: true)
             }

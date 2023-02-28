@@ -21,6 +21,9 @@ class CustomTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = .systemCyan
+        tituloTarefaLabel.layer.borderWidth = 2
+        tituloTarefaLabel.layer.borderColor = UIColor.white.cgColor
+        tituloTarefaLabel.layer.cornerRadius = 8
         tasks = UserDefaults.standard.array(forKey: "tasks") as? [[String: Any]] ?? []
     } 
 }

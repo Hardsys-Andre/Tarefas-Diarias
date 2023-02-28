@@ -32,7 +32,6 @@
 		ACB93EF4299FF40C00616B58 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB93EF3299FF40C00616B58 /* NotificationHelper.swift */; };
 		ACB9F6C229905EEE00843242 /* CadastrarTarefasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB9F6C029905EEE00843242 /* CadastrarTarefasViewController.swift */; };
 		ACB9F6C329905EEE00843242 /* CadastrarTarefasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB9F6C129905EEE00843242 /* CadastrarTarefasViewController.xib */; };
-		ACBDACD4298DAC85000D9925 /* GetDadosUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBDACD3298DAC85000D9925 /* GetDadosUsuario.swift */; };
 		ACD759B629A8F4A4005F21FF /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD759B529A8F4A4005F21FF /* TaskManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +63,6 @@
 		ACB93EF3299FF40C00616B58 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		ACB9F6C029905EEE00843242 /* CadastrarTarefasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadastrarTarefasViewController.swift; sourceTree = "<group>"; };
 		ACB9F6C129905EEE00843242 /* CadastrarTarefasViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CadastrarTarefasViewController.xib; sourceTree = "<group>"; };
-		ACBDACD3298DAC85000D9925 /* GetDadosUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDadosUsuario.swift; sourceTree = "<group>"; };
 		ACD759B529A8F4A4005F21FF /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
 		BD4DFCE4B631CDB01E868F94 /* Pods-Tarefas Diarias.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tarefas Diarias.debug.xcconfig"; path = "Target Support Files/Pods-Tarefas Diarias/Pods-Tarefas Diarias.debug.xcconfig"; sourceTree = "<group>"; };
 		E8BBFD0068745FB481FF6F04 /* Pods-Tarefas Diarias.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tarefas Diarias.release.xcconfig"; path = "Target Support Files/Pods-Tarefas Diarias/Pods-Tarefas Diarias.release.xcconfig"; sourceTree = "<group>"; };
@@ -162,7 +160,6 @@
 			isa = PBXGroup;
 			children = (
 				AC0DB981298B81A6004F4F4F /* LoginViewModel.swift */,
-				ACBDACD3298DAC85000D9925 /* GetDadosUsuario.swift */,
 				ACD759B529A8F4A4005F21FF /* TaskManager.swift */,
 			);
 			path = ViewModel;
@@ -427,7 +424,6 @@
 				AC0DB982298B81A6004F4F4F /* LoginViewModel.swift in Sources */,
 				ACB93EF4299FF40C00616B58 /* NotificationHelper.swift in Sources */,
 				AC8C7C982989CBBE00785C09 /* LoginViewController.swift in Sources */,
-				ACBDACD4298DAC85000D9925 /* GetDadosUsuario.swift in Sources */,
 				AC3ED1C22996E9D300F342A4 /* ExibirTarefasCadastradasVC.swift in Sources */,
 				ACB9F6C229905EEE00843242 /* CadastrarTarefasViewController.swift in Sources */,
 				ACD759B629A8F4A4005F21FF /* TaskManager.swift in Sources */,
