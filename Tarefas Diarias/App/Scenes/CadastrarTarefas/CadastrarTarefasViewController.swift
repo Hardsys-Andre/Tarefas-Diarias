@@ -18,7 +18,6 @@ class CadastrarTarefasViewController: UIViewController {
         @IBOutlet weak var btnEscolherData: UIButton!
         @IBOutlet weak var btnEscolherHorario: UIButton!
         @IBOutlet weak var dataView: UIView!
-        @IBOutlet weak var horarioView: UIView!
         @IBOutlet weak var dataPickerData: UIDatePicker!
         @IBOutlet weak var dataPickerHora: UIDatePicker!
         @IBOutlet weak var btnAlimentacao: UIButton!
@@ -61,20 +60,16 @@ class CadastrarTarefasViewController: UIViewController {
             btnComum.layer.borderColor = UIColor.cyan.cgColor
             btnComum.addTarget(self, action: #selector(tappedBtnComum), for: .touchUpInside)
             
-            btnEscolherData.isUserInteractionEnabled = false
-            btnEscolherHorario.isUserInteractionEnabled = false
+            //btnEscolherData.isUserInteractionEnabled = false
+            //btnEscolherHorario.isUserInteractionEnabled = false
             
             dataView.layer.cornerRadius = 8
             dataView.layer.borderWidth = 2
             dataView.layer.borderColor = UIColor.cyan.cgColor
             
-            horarioView.layer.cornerRadius = 8
-            horarioView.layer.borderWidth = 2
-            horarioView.layer.borderColor = UIColor.cyan.cgColor
+        dataPickerData.backgroundColor = .cyan
             
-            dataPickerData.backgroundColor = .systemCyan
-            
-            dataPickerHora.backgroundColor = .systemCyan
+            dataPickerHora.backgroundColor = .cyan
             
             btnAlimentacao.layer.cornerRadius = 8
             btnAlimentacao.addTarget(self, action: #selector(tappedBtnAlimentacao), for: .touchUpInside)
@@ -175,17 +170,17 @@ class CadastrarTarefasViewController: UIViewController {
         }
         @objc func tappedBtnImportante(){
             prioridade = "Importante"
-            btnImportante.backgroundColor = .systemCyan
+            btnImportante.backgroundColor = .cyan
             btnImportante.tintColor = .black
             btnComum.backgroundColor = nil
-            btnComum.tintColor = .systemCyan
+            btnComum.tintColor = .cyan
         }
         @objc func tappedBtnComum(){
             prioridade = "Comum"
-            btnComum.backgroundColor = .systemCyan
+            btnComum.backgroundColor = .cyan
             btnComum.tintColor = .black
             btnImportante.backgroundColor = nil
-            btnImportante.tintColor = .systemCyan
+            btnImportante.tintColor = .cyan
         }
     var dataSelecionada: String = ""
         @IBAction func tappedData(_ sender: UIDatePicker) {

@@ -68,7 +68,7 @@ class TarefasCriadasViewController: UIViewController {
         
         let date = Date()
         let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE - dd/MMM - yyyy"
+        formatter.dateFormat = "EEEE-dd/MMM/yyyy"
         let result = formatter.string(from: date)
         dataDoDia.text = result
         
@@ -102,7 +102,7 @@ class TarefasCriadasViewController: UIViewController {
                 if let url = URL(string: self.urlImage ?? "") {
                     self.userImageLogado.sd_setImage(with: url, placeholderImage: UIImage(named: "placeholder.png"))
                     self.userImageLogado.layer.borderWidth = 2
-                    self.userImageLogado.layer.borderColor = UIColor.systemCyan.cgColor
+                    self.userImageLogado.layer.borderColor = UIColor.cyan.cgColor
                     self.userImageLogado.layer.cornerRadius = 10
                 }
                 self.nomeUsuarioLogado.text = self.nomeUsuario

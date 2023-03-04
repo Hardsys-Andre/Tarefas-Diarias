@@ -20,7 +20,7 @@ class CustomTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        backgroundColor = .systemCyan
+        backgroundColor = .cyan
         tituloTarefaLabel.layer.borderWidth = 2
         tituloTarefaLabel.layer.borderColor = UIColor.white.cgColor
         tituloTarefaLabel.layer.cornerRadius = 8

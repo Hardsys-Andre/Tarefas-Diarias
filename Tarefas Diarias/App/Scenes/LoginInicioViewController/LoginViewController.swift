@@ -57,7 +57,6 @@ class LoginViewController: UIViewController {
                 self.loginView.topAnchor.constraint(equalTo: self.btnGoogle.bottomAnchor, constant: 5),
                 self.loginView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 15),
                 self.loginView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -15),
-                self.loginView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
             ])
         }
         UIView.animate(withDuration: 1) {
@@ -65,8 +64,8 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func tappedTarefas(_ sender: UIButton) {
-        let tarefasVC = TarefasCriadasViewController()
-        navigationController?.pushViewController(tarefasVC, animated: true)
+        //let tarefasVC = TarefasCriadasViewController()
+        //navigationController?.pushViewController(tarefasVC, animated: true)
     }
 }
 extension LoginViewController: LoginViewDelegate {
