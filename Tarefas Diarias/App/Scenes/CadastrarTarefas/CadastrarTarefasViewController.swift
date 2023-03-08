@@ -163,7 +163,9 @@ class CadastrarTarefasViewController: UIViewController {
                     let taskDescription = descricaoTarefaTextView.text ?? ""
                 
                     // Salva a tarefa no seu aplicativo
-                    NotificationHelper.shared.scheduleNotification(at: selectedDate, title: taskTitle, body: taskDescription)
+                let userEmail = emailLogado ?? ""
+                print(userEmail)
+                NotificationHelper.shared.scheduleNotification(at: selectedDate, title: taskTitle, body: taskDescription, userEmail: userEmail)
 
                 self.navigationController?.popViewController(animated: true)
             }

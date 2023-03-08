@@ -10,12 +10,14 @@ import UserNotifications
 class NotificationHelper {
     static let shared = NotificationHelper()
     
-    func scheduleNotification(at date: Date, title: String, body: String) {
+    func scheduleNotification(at date: Date, title: String, body: String, userEmail: String) {
         
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = body
         content.sound = UNNotificationSound.default
+        content.userInfo = ["userEmail": userEmail]
+       
         
         let calendar = Calendar(identifier: .gregorian)
         let components = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: date)

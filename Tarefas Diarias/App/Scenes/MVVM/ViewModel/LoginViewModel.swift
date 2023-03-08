@@ -42,6 +42,8 @@ class LoginViewModel {
                     print("Login feito com sucesso")
                     
                     let center = UNUserNotificationCenter.current()
+                    
+                    let userEmail = email
 
                     center.getPendingNotificationRequests(completionHandler: { requests in
                         let today = Date()
@@ -51,12 +53,15 @@ class LoginViewModel {
 
                         var hasTasksForToday = false
                         for request in requests {
+                            
                             if let trigger = request.trigger as? UNCalendarNotificationTrigger,
-                               let date = trigger.nextTriggerDate() {
-                                let dateString = formatter.string(from: date)
-                                if dateString == todayString {
-                                    hasTasksForToday = true
-                                    break
+                                       let date = trigger.nextTriggerDate(),
+                                       let userInfo = request.content.userInfo as? [String: Any],
+                                       let requestUserEmail = userInfo["userEmail"] as? String {
+                                        let dateString = formatter.string(from: date)
+                                        if dateString == todayString && requestUserEmail == userEmail {
+                                            hasTasksForToday = true
+                                            break
                                 }
                             }
                         }
@@ -65,6 +70,7 @@ class LoginViewModel {
                             self.alert?.alert(title: "Atenção", message: "Você tem tarefas agendadas para o dia de hoje")
                         }
                     })
+                    
                     self.delegate?.goToTasks()
                 }
             }
